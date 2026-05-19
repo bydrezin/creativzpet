@@ -98,9 +98,8 @@
 
     <!-- Hero Section -->
     <section class="relative bg-secondary pt-8 pb-32 lg:pt-12 lg:pb-40 overflow-hidden">
-        <!-- Luz Gradiente Fixa (Fundo) -->
-        <div class="absolute top-[-20%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-secondary/0 to-transparent pointer-events-none z-0"></div>
-        <div class="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-primary/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+        <!-- Luz da Esquerda para a Direita -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/5 to-transparent pointer-events-none z-0"></div>
         
         <div class="container max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center">
@@ -130,13 +129,14 @@
                     <!-- Imagem Principal -->
                     <div id="hero-img-main" class="w-full max-w-[480px] relative z-10 drop-shadow-2xl lg:-mt-16 -mt-8">
                         
-                        <!-- Cartão Glassmorphism (Efeito 3D Premium) -->
-                        <div class="absolute top-[55%] -bottom-4 md:-bottom-8 -left-4 -right-4 md:-left-10 md:-right-10 bg-white/5 backdrop-blur-xl border border-white/20 rounded-[3rem] z-0 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transform -rotate-2 overflow-hidden">
-                            <!-- Reflexo de Luz Superior (Borda brilhante) -->
-                            <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-                            <!-- Degrade interno sutil -->
-                            <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                        </div>
+                        <!-- Ponto de luz azul forte (Destaque) -->
+                        <div class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-primary/80 rounded-full blur-[80px] pointer-events-none z-0"></div>
+
+                        <!-- Grid Circular Focado (Atrás da Imagem) -->
+                        <div class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] md:w-[550px] h-[450px] md:h-[550px] pointer-events-none z-0" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px); background-size: 35px 35px; mask-image: radial-gradient(circle, black 0%, transparent 65%); -webkit-mask-image: radial-gradient(circle, black 0%, transparent 65%);"></div>
+                        
+                        <!-- Retângulo Branco Sólido (Base do Efeito 3D Pop-out) -->
+                        <div class="absolute top-[55%] bottom-0 -left-4 -right-4 md:-left-10 md:-right-10 bg-white rounded-[3rem] z-0 shadow-2xl"></div>
 
                         <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779165058/Cachorro-na-banheira_u5s9nz.webp" alt="Cachorro Feliz na Banheira" class="w-full h-auto object-contain scale-110 origin-bottom relative z-10">
                         
@@ -162,9 +162,9 @@
         <div class="container max-w-6xl mx-auto px-4 lg:px-8">
             <!-- Big Discount Banner -->
             <div class="bg-secondary rounded-[3rem] px-8 py-8 relative overflow-visible flex flex-col md:flex-row items-center justify-between shadow-2xl mt-16 mb-16">
-                <!-- Luz Gradiente (Fundo do Cartão) -->
+                <!-- Luz da Esquerda para a Direita (Fundo do Cartão) -->
                 <div class="absolute inset-0 rounded-[3rem] overflow-hidden pointer-events-none z-0">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/25 via-secondary/0 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/5 to-transparent"></div>
                 </div>
 
                 <div class="relative z-20 w-full md:w-1/2 text-white text-center md:text-left">
@@ -502,9 +502,8 @@
 
     <!-- Contato (Fale Conosco) -->
     <section id="contato" class="py-16 relative z-10 overflow-hidden bg-secondary">
-        <!-- Luz Gradiente Fixa (Fundo) -->
-        <div class="absolute bottom-[-30%] left-1/2 -translate-x-1/2 w-[800px] md:w-[1200px] h-[800px] md:h-[1200px] bg-primary/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
-        <div class="absolute top-[-20%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-secondary/0 to-transparent pointer-events-none z-0"></div>
+        <!-- Luz da Esquerda para a Direita -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/5 to-transparent pointer-events-none z-0"></div>
         
         <div class="container max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2 text-center">A Escolha é Simples.</h2>
