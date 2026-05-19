@@ -137,8 +137,13 @@
                         
                         <!-- Retângulo Branco Sólido e Imagem com Clip-Path -->
                         <div class="relative w-full mt-4">
-                            <!-- Retângulo Base Branco (Pedestal Largo) -->
-                            <div class="absolute h-[25%] md:h-[30%] bottom-0 -left-6 -right-6 md:-left-12 md:-right-12 bg-white rounded-[2.5rem] z-0 shadow-2xl"></div>
+                            <!-- Base Glassmorphism (Pedestal Largo) -->
+                            <div class="absolute h-[25%] md:h-[30%] bottom-0 -left-6 -right-6 md:-left-12 md:-right-12 bg-white/5 backdrop-blur-xl border border-white/20 rounded-[2.5rem] z-0 shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden">
+                                <!-- Reflexo de Luz Superior (Borda brilhante) -->
+                                <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+                                <!-- Degrade interno sutil -->
+                                <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+                            </div>
                             
                             <!-- Imagem do Cachorro Recortada APENAS na Base -->
                             <div class="relative z-10 w-full [clip-path:inset(-100%_-50%_0_-50%)]">
