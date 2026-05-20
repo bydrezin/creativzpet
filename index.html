@@ -732,17 +732,32 @@
 
 
 
-    <!-- Widget: Ligação por Voz (Telefone) - bottom: 100px -->
+    <!-- Widget: Ligação por Voz (Telefone) - DEVE VIR PRIMEIRO -->
+    <div data-chat-widget data-widget-id="6a0d50834d25f28501effbe6" data-location-id="EmTYdhwsl14rtOkywLwY"></div>
     <script src="https://widgets.leadconnectorhq.com/loader.js"
             data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-            data-widget-id="6a0d50834d25f28501effbe6"
-            async></script>
+            data-widget-id="6a0d50834d25f28501effbe6"></script>
 
-    <!-- Widget: Chat Standard - bottom: 20px -->
+    <!-- Widget: Chat Standard - DEVE VIR SEGUNDO -->
     <script src="https://widgets.leadconnectorhq.com/loader.js"
             data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-            data-widget-id="6a0cd3550732dc5e3f0ce3da"
-            async></script>
+            data-widget-id="6a0cd3550732dc5e3f0ce3da"></script>
+
+    <!-- MODO HARD: Força bruta na posição dos widgets via JS com polling -->
+    <script>
+        let tentativas = 0;
+        let modoHard = setInterval(function() {
+            let widgets = document.querySelectorAll('chat-widget');
+            if (widgets.length >= 2) {
+                widgets[0].style.cssText = "position: fixed !important; bottom: 100px !important; right: 20px !important; z-index: 99999 !important;";
+                widgets[1].style.cssText = "position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 99998 !important;";
+                console.log("MODO HARD: Botões separados com sucesso!");
+                clearInterval(modoHard);
+            }
+            tentativas++;
+            if (tentativas > 20) clearInterval(modoHard);
+        }, 500);
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
