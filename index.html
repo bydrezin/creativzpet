@@ -685,31 +685,12 @@
         </svg>
     </a>
 
-    <!-- GoHighLevel Chat Widget Deferral & Custom Trigger Script -->
+    <!-- LeadConnector Chat Widget Script (Loaded Natively for Full Web Call & VoIP Permission Compatibility) -->
+    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a0d50834d25f28501effbe6" defer></script>
+
+    <!-- LeadConnector Custom Trigger & Shadow DOM Styling -->
     <script>
         (function() {
-            const widgetId = "6a0d50834d25f28501effbe6";
-
-            window.loadGHLWidget = function() {
-                if (window.ghlWidgetLoaded) return;
-                window.ghlWidgetLoaded = true;
-                const script = document.createElement('script');
-                script.src = "https://widgets.leadconnectorhq.com/loader.js";
-                script.setAttribute('data-resources-url', "https://widgets.leadconnectorhq.com/chat-widget/loader.js");
-                script.setAttribute('data-widget-id', widgetId);
-                script.async = true;
-                document.body.appendChild(script);
-            };
-            
-            // Defer loading for performance, but load on user interaction
-            const interactionEvents = ['mouseover', 'keydown', 'touchstart', 'scroll'];
-            function triggerGHL() {
-                window.loadGHLWidget();
-                interactionEvents.forEach(e => window.removeEventListener(e, triggerGHL));
-            }
-            interactionEvents.forEach(e => window.addEventListener(e, triggerGHL, { passive: true }));
-            setTimeout(window.loadGHLWidget, 3500);
-
             // Function to apply custom styles inside the shadow DOM to hide the default bubble
             function applyShadowStyles() {
                 const widget = document.querySelector('chat-widget');
@@ -753,11 +734,6 @@
             // Custom trigger function for the header buttons
             window.openLCWidget = function(e) {
                 if (e) e.preventDefault();
-                
-                // Force load immediately if not already loaded
-                if (!window.ghlWidgetLoaded) {
-                    window.loadGHLWidget();
-                }
                 
                 function tryOpen() {
                     // Try the user's specific API first
