@@ -115,19 +115,29 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <!-- Text Content -->
                 <div class="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0 pr-0 lg:pr-8">
-                    <span class="inline-block bg-white/10 text-white border border-white/20 font-bold text-xs tracking-widest uppercase mb-4 py-1.5 px-4 rounded-full shadow-sm backdrop-blur-sm">SITE COM ATENDIMENTO AUTOMATIZADO</span>
+                    <!-- Tag Avaliação no lugar do pre-headline -->
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full shadow-sm text-sm font-bold text-white backdrop-blur-sm mb-6">
+                        <span class="text-yellow-400">★ 5.0</span> - Site premium + Atendente IA em 7 dias (ou menos)
+                    </div>
+                    
                     <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5 drop-shadow-sm">
                         Como lotar a sua clínica ou petshop sem contratar mais ninguém.
                     </h1>
                     <p class="text-white/80 text-lg mb-8 max-w-md mx-auto lg:mx-0">
                         Uma Inteligência Artificial que responde ao seu WhatsApp em 3 segundos e agenda consultas e banhos 24h por dia. Você ganha clientes de madrugada enquanto a sua concorrência dorme.
                     </p>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                        <button id="btn-testar-ia" class="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-400 to-blue-800 text-white rounded-xl font-bold text-sm md:text-base hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] group">
-                            QUERO MEU SITE COM ATENDENTE AGORA
-                        </button>
-                        <div class="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full shadow-sm text-sm font-bold text-white backdrop-blur-sm">
-                            <span class="text-yellow-400">★ 5.0</span> - Site premium + Atendente IA em 7 dias (ou menos)
+                    
+                    <!-- Botão e Seta Animada -->
+                    <div class="flex justify-center lg:justify-start w-full">
+                        <div class="inline-flex flex-col items-center">
+                            <button id="btn-testar-ia" class="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-400 to-blue-800 text-white rounded-xl font-bold text-sm md:text-base hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] group">
+                                QUERO MEU SITE COM ATENDENTE AGORA
+                            </button>
+                            
+                            <!-- Seta de Rolagem -->
+                            <div class="flex flex-col items-center text-white/50 mt-6 animate-bounce">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
