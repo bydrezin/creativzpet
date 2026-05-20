@@ -29,7 +29,7 @@
             }
         }
     </script>
-    <style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#6b7280;background-color:#f2f4f7}h1,h2,h3,h4,h5,h6{color:#0b1b3f;font-weight:700}.placeholder-img{background-color:#e2e8f0;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700;text-align:center}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}@keyframes marquee{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}.animate-marquee{animation:marquee 90s linear infinite}.animate-marquee:hover{animation-play-state:paused}chat-widget.voice-call-widget{position:fixed!important;bottom:100px!important;z-index:99999!important}chat-widget.standard-chat-widget{position:fixed!important;bottom:20px!important;z-index:99999!important}.btn-chamada-ativa-simples{background-color:#ff3b30!important;color:white!important;border-color:#ff3b30!important;font-weight:bold!important}</style>
+    <style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#6b7280;background-color:#f2f4f7}h1,h2,h3,h4,h5,h6{color:#0b1b3f;font-weight:700}.placeholder-img{background-color:#e2e8f0;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700;text-align:center}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}@keyframes marquee{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}.animate-marquee{animation:marquee 90s linear infinite}.animate-marquee:hover{animation-play-state:paused}chat-widget.voice-call-widget{position:fixed!important;bottom:100px!important;z-index:99999!important;opacity:0!important;pointer-events:none!important;transition:opacity 0.3s ease!important}chat-widget.standard-chat-widget{position:fixed!important;bottom:20px!important;z-index:99999!important}.voice-widget-visible{opacity:1!important;pointer-events:auto!important;z-index:99999!important;transition:opacity 0.3s ease!important}.voice-widget-hidden{opacity:0!important;pointer-events:none!important;transition:opacity 0.3s ease!important}.btn-chamada-ativa-simples{background-color:#ff3b30!important;color:white!important;border-color:#ff3b30!important;font-weight:bold!important}</style>
 </head>
 <body class="antialiased overflow-x-hidden bg-secondary">
 
@@ -714,73 +714,189 @@
         })();
     </script>
 
-    <!-- Script de Toggle de Chamada (Deep Piercing + Estado Simples) -->
+    <!-- Script: Phantom UI — Orquestra do Widget de Voz -->
     <script>
-        // Variáveis de estado
-        let inCallGlobal = false;
-        let originalButtonText = "";
+        // ============================================================
+        // PHANTOM UI — Estado Global
+        // ============================================================
+        var inCallGlobal    = false;
+        var originalBtnHTML = {}; // { id: 'innerHTML original' }
+        var voicePollInterval = null;
+        var BTN_IDS = ['btn-ligar-topo', 'btn-ligar-topo-mob'];
 
+        // --- Helpers de Referência ---
+        function getVoiceWidget() {
+            return document.querySelector('chat-widget.voice-call-widget');
+        }
+
+        // --- Deep Find: Varredura recursiva no Shadow DOM ---
+        // Retorna o elemento encontrado (sem clicar) ou null
+        function deepFind(root, searchTerms) {
+            var candidates = root.querySelectorAll('button, div[role="button"], a, [class*="btn"], span');
+            for (var i = 0; i < candidates.length; i++) {
+                var el = candidates[i];
+                var elText = (el.innerText || el.textContent || '').toLowerCase().trim();
+                if (searchTerms.some(function(t) { return elText === t || elText.includes(t); })) {
+                    return el;
+                }
+            }
+            var all = root.querySelectorAll('*');
+            for (var j = 0; j < all.length; j++) {
+                if (all[j].shadowRoot) {
+                    var found = deepFind(all[j].shadowRoot, searchTerms);
+                    if (found) return found;
+                }
+            }
+            return null;
+        }
+
+        // Deep Click: encontra e clica
+        function deepClick(root, searchTerms) {
+            var el = deepFind(root, searchTerms);
+            if (el) { el.click(); return true; }
+            return false;
+        }
+
+        // --- Visibilidade do Widget de Voz ---
+        function showVoiceWidget() {
+            var w = getVoiceWidget();
+            if (w) {
+                w.classList.remove('voice-widget-hidden');
+                w.classList.add('voice-widget-visible');
+            }
+        }
+
+        function hideVoiceWidget() {
+            var w = getVoiceWidget();
+            if (w) {
+                w.classList.remove('voice-widget-visible');
+                w.classList.add('voice-widget-hidden');
+            }
+        }
+
+        // --- Gerenciamento dos Botões do Menu ---
+        function setButtonsActive() {
+            BTN_IDS.forEach(function(id) {
+                var btn = document.getElementById(id);
+                if (btn) {
+                    if (!originalBtnHTML[id]) originalBtnHTML[id] = btn.innerHTML;
+                    btn.innerHTML = 'Encerrar Chamada';
+                    btn.classList.add('btn-chamada-ativa-simples');
+                }
+            });
+        }
+
+        function resetAllButtons() {
+            inCallGlobal = false;
+            BTN_IDS.forEach(function(id) {
+                var btn = document.getElementById(id);
+                if (btn) {
+                    if (originalBtnHTML[id]) btn.innerHTML = originalBtnHTML[id];
+                    btn.classList.remove('btn-chamada-ativa-simples');
+                }
+            });
+        }
+
+        // --- Clica no Launcher do Widget de Voz (ainda invisível) ---
+        function clickVoiceLauncher() {
+            var widget = getVoiceWidget();
+            if (!widget) return;
+            if (widget.shadowRoot) {
+                var launcher = widget.shadowRoot.querySelector('button, [class*="launcher"], [id*="launcher"]');
+                if (launcher) { launcher.click(); return; }
+            }
+            widget.click(); // Fallback: clica no host element
+        }
+
+        // ============================================================
+        // SINCRONIZAÇÃO REVERSA
+        // Detecta se o usuário encerrou a chamada direto no widget
+        // (sem usar o botão do menu superior)
+        // ============================================================
+        function setupReverseSyncWatcher() {
+            var voiceWidget = getVoiceWidget();
+            if (!voiceWidget) return;
+
+            function onWidgetClick() {
+                if (!inCallGlobal) return;
+                // Após breve delay, verifica se o botão 'Encerrar ligação' desapareceu
+                setTimeout(function() {
+                    var endBtn = deepFind(document, ['encerrar ligação', 'encerrar ligacao', 'hang up', 'end call']);
+                    if (!endBtn) {
+                        // Chamada encerrada pelo widget → reseta tudo
+                        hideVoiceWidget();
+                        resetAllButtons();
+                        voiceWidget.removeEventListener('click', onWidgetClick);
+                    }
+                }, 600);
+            }
+
+            voiceWidget.addEventListener('click', onWidgetClick);
+        }
+
+        // ============================================================
+        // DELEGAÇÃO GLOBAL DE CLIQUES — Botão do Menu
+        // ============================================================
         document.addEventListener('click', function(e) {
-            // 1. Identifica se o clique foi em um botão/link
-            const target = e.target.closest('a, button');
+            var target = e.target.closest('a, button');
             if (!target) return;
 
-            // 2. Normaliza os textos para comparação sem erros
-            const currentText = (target.innerText || '').toLowerCase();
-            const isLigue = currentText.includes('ligue para nós');
-            const isEncerrar = currentText.includes('encerrar chamada');
+            var text = (target.innerText || '').toLowerCase();
+            var isLigue    = text.includes('ligue para nós') || text.includes('ligue agora');
+            var isEncerrar = text.includes('encerrar chamada');
 
-            // 3. Se não for nenhum dos nossos botões, encerra o script aqui
             if (!isLigue && !isEncerrar) return;
-
-            // Previne qualquer ação padrão do navegador
             e.preventDefault();
 
-            // Salva o texto original apenas no primeiro clique
-            if (!originalButtonText) originalButtonText = target.innerText;
-
-            // =========================================================
-            // FUNÇÃO DE PERFURAÇÃO PROFUNDA (CÉREBRO DO SCRIPT)
-            // =========================================================
-            function deepSearchAndClick(root, searchTerms) {
-                const elements = root.querySelectorAll('button, div[role="button"], a, .vapi-btn');
-                for (let el of elements) {
-                    const elText = el.innerText ? el.innerText.toLowerCase() : '';
-                    if (searchTerms.some(term => elText === term || elText.includes(term))) {
-                        el.click();
-                        return true;
-                    }
-                }
-                const allNodes = root.querySelectorAll('*');
-                for (let node of allNodes) {
-                    if (node.shadowRoot && deepSearchAndClick(node.shadowRoot, searchTerms)) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-            // =========================================================
+            // Garante carregamento lazy dos widgets GHL
+            if (typeof window.loadGHLWidget === 'function') window.loadGHLWidget();
 
             if (!inCallGlobal) {
-                // 🚀 ESTADO: INICIAR CHAMADA (Primeiro Clique)
-                const clickedStart = deepSearchAndClick(document, ['ligar agora', 'falar agora', 'iniciar']);
+                // ================================================
+                // A. INICIAR CHAMADA
+                // ================================================
 
-                if (clickedStart) {
-                    inCallGlobal = true;
-                    target.innerHTML = 'Encerrar Chamada';
-                    target.classList.add('btn-chamada-ativa-simples');
-                } else {
-                    // Fallback: widget bloqueado (CORS). Rola a tela.
-                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-                }
+                // A1 — Salva HTML original de todos os botões do menu
+                BTN_IDS.forEach(function(id) {
+                    var btn = document.getElementById(id);
+                    if (btn && !originalBtnHTML[id]) originalBtnHTML[id] = btn.innerHTML;
+                });
+
+                // A2 — Clica no launcher do widget de voz (abre o painel, ainda oculto)
+                clickVoiceLauncher();
+
+                // A3 — Polling a cada 100ms: aguarda o botão 'Ligar Agora' aparecer no DOM
+                if (voicePollInterval) clearInterval(voicePollInterval);
+                var attempts = 0;
+                voicePollInterval = setInterval(function() {
+                    attempts++;
+                    var callBtn = deepFind(document, ['ligar agora', 'liga pro papi', 'falar agora', 'iniciar']);
+                    if (callBtn) {
+                        clearInterval(voicePollInterval);
+                        callBtn.click();           // Dispara a ligação
+                        showVoiceWidget();         // Revela o widget (Phantom → Visível)
+                        inCallGlobal = true;
+                        setButtonsActive();        // Atualiza botões do menu
+                        setupReverseSyncWatcher(); // Ativa listener de encerramento pelo widget
+                    } else if (attempts > 50) {
+                        // Timeout de 5s: exibe o widget mesmo sem confirmar
+                        clearInterval(voicePollInterval);
+                        showVoiceWidget();
+                    }
+                }, 100);
+
             } else {
-                // 🛑 ESTADO: ENCERRAR CHAMADA (Segundo Clique)
-                deepSearchAndClick(document, ['encerrar', 'desligar', 'parar', 'stop', 'end call']);
+                // ================================================
+                // B. ENCERRAR CHAMADA
+                // ================================================
+                if (voicePollInterval) clearInterval(voicePollInterval);
 
-                // Reseta o visual do botão superior independentemente
-                inCallGlobal = false;
-                target.innerHTML = originalButtonText;
-                target.classList.remove('btn-chamada-ativa-simples');
+                // B1 — Clica em 'Encerrar ligação' no widget (texto exato do botão vermelho redondo)
+                deepClick(document, ['encerrar ligação', 'encerrar ligacao', 'desligar', 'end call', 'stop', 'parar']);
+
+                // B2 — Oculta o widget e restaura o botão do menu
+                hideVoiceWidget();
+                resetAllButtons();
             }
         });
 
