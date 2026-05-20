@@ -105,16 +105,16 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <!-- Text Content -->
                 <div class="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0 pr-0 lg:pr-8">
-                    <span class="inline-block bg-white/10 text-white border border-white/20 font-bold text-xs tracking-widest uppercase mb-4 py-1.5 px-4 rounded-full shadow-sm backdrop-blur-sm">EXCLUSIVO PARA CLÍNICAS E PETSHOPS</span>
+                    <span class="inline-block bg-white/10 text-white border border-white/20 font-bold text-xs tracking-widest uppercase mb-4 py-1.5 px-4 rounded-full shadow-sm backdrop-blur-sm">SITE COM ATENDIMENTO AUTOMATIZADO</span>
                     <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5 drop-shadow-sm">
-                        O Seu Petshop Fatura o Que Ele <span class="whitespace-nowrap">Realmente Merece?</span>
+                        Como lotar a sua clínica sem contratar mais ninguém.
                     </h1>
                     <p class="text-white/80 text-lg mb-8 max-w-md mx-auto lg:mx-0">
-                        Nós não vendemos 'sites bonitinhos'. Implementamos uma máquina de vendas com Inteligência Artificial que atende tutores em 3 segundos e agenda consultas enquanto você dorme.
+                        Uma Inteligência Artificial que responde ao seu WhatsApp em 3 segundos, tria emergências e agenda consultas 24h por dia. Você ganha clientes de madrugada enquanto a sua concorrência dorme.
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
                         <button id="btn-testar-ia" class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-white rounded-full font-bold text-lg hover:bg-white hover:text-secondary transition-colors shadow-lg group">
-                            Testar Atendimento com IA
+                            Ver a IA Agendando na Prática
                         </button>
                         <div class="flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full shadow-sm text-sm font-bold text-white backdrop-blur-sm">
                             <span class="text-yellow-400">★ 5.0</span> - A Estrutura Que Mais Converte no Brasil
@@ -691,55 +691,15 @@
         // Start auto-play
         resetGalleryInterval();
 
-        // Trigger GoHighLevel Chat Widget (Ultimate Fix)
+        // Trigger GoHighLevel Chat Widget
         const btnTestarIa = document.getElementById('btn-testar-ia');
         if (btnTestarIa) {
             btnTestarIa.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                function tryOpenWidget() {
-                    // 1. Tenta API oficial documentada
-                    if (window.leadConnector && window.leadConnector.chatWidget && typeof window.leadConnector.chatWidget.openWidget === 'function') {
-                        window.leadConnector.chatWidget.openWidget();
-                        // Não retorna true aqui para garantir que o clique físico também aconteça
-                        // pois algumas versões do openWidget() falham silenciosamente
-                    }
-                    if (window.chatWidget && typeof window.chatWidget.open === 'function') {
-                        window.chatWidget.open();
-                    }
-                    if (window.chatWidget && typeof window.chatWidget.openWidget === 'function') {
-                        window.chatWidget.openWidget();
-                    }
-                    
-                    // 2. Fallback Infalível: Simular clique direto no botão-bolha do Shadow DOM
-                    try {
-                        const chatWidgetEl = document.querySelector('chat-widget');
-                        if (chatWidgetEl && chatWidgetEl.shadowRoot) {
-                            // AQUI ESTAVA O ERRO ANTES: O primeiro <button> é o de fechar o balão de mensagem!
-                            // O botão correto que abre o chat tem a classe .lc_text-widget--bubble
-                            const widgetBtn = chatWidgetEl.shadowRoot.querySelector('button.lc_text-widget--bubble') || 
-                                              chatWidgetEl.shadowRoot.querySelector('.lc_text-widget--bubble');
-                            
-                            if (widgetBtn) {
-                                // Verifica se já não está aberto verificando algum atributo ou classe, 
-                                // ou apenas clica. Se o usuário clicou em "Testar", queremos abrir.
-                                widgetBtn.click();
-                                return true;
-                            }
-                        }
-                    } catch (err) {}
-                    
-                    return false;
-                }
-
-                if (!tryOpenWidget()) {
-                    let tries = 0;
-                    const interval = setInterval(function() {
-                        tries++;
-                        if (tryOpenWidget() || tries >= 10) {
-                            clearInterval(interval);
-                        }
-                    }, 500);
+                if (window.leadConnector && window.leadConnector.chatWidget) {
+                    window.leadConnector.chatWidget.openWidget();
+                } else {
+                    console.warn('GoHighLevel Chat Widget não está carregado ainda.');
                 }
             });
         }
