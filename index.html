@@ -339,11 +339,11 @@
                         <img id="gallery-main" src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779203786/petshopt1_tkswdo.webp" class="w-full h-full object-cover object-left transition-opacity duration-300" alt="Espaço CreativzPet">
                         
                         <!-- Navigation Arrows -->
-                        <button onclick="prevGalleryImage()" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all opacity-0 group-hover:opacity-100 shadow-md">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <button onclick="prevGalleryImage()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 md:w-10 md:h-10 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-secondary hover:text-primary transition-all shadow-md hover:scale-105 active:scale-95 z-20 cursor-pointer" aria-label="Imagem Anterior">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
                         </button>
-                        <button onclick="nextGalleryImage()" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all opacity-0 group-hover:opacity-100 shadow-md">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <button onclick="nextGalleryImage()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 md:w-10 md:h-10 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-secondary hover:text-primary transition-all shadow-md hover:scale-105 active:scale-95 z-20 cursor-pointer" aria-label="Próxima Imagem">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                         </button>
                     </div>
                     <!-- Thumbnails -->
@@ -736,10 +736,10 @@
             thumbs.forEach((thumb, i) => {
                 if (i === index) {
                     thumb.classList.add('border-primary', 'opacity-100');
-                    thumb.classList.remove('border-transparent', 'opacity-60');
+                    thumb.classList.remove('border-transparent', 'opacity-50');
                 } else {
                     thumb.classList.remove('border-primary', 'opacity-100');
-                    thumb.classList.add('border-transparent', 'opacity-60');
+                    thumb.classList.add('border-transparent', 'opacity-50');
                 }
             });
             resetGalleryInterval();
