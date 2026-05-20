@@ -769,7 +769,7 @@
         });
 
         // Opt-in Modal Control Logic
-        document.addEventListener("DOMContentLoaded", function() {
+        function initModal() {
             const modal = document.getElementById('optin-modal');
             const modalCard = modal.querySelector('.modal-card');
             const closeBtn = document.getElementById('close-modal-btn');
@@ -787,7 +787,7 @@
             // Show modal after 1.2 seconds on page load
             setTimeout(() => {
                 modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('modal-active');
+                modal.classList.add('opacity-100', 'pointer-events-auto', 'modal-active');
                 modalCard.classList.remove('scale-90', 'opacity-0');
                 modalCard.classList.add('scale-100', 'opacity-100');
             }, 1200);
@@ -796,8 +796,8 @@
             function closeModal() {
                 modalCard.classList.remove('scale-100', 'opacity-100');
                 modalCard.classList.add('scale-90', 'opacity-0');
+                modal.classList.remove('opacity-100', 'pointer-events-auto', 'modal-active');
                 modal.classList.add('opacity-0', 'pointer-events-none');
-                modal.classList.remove('modal-active');
             }
 
             // Close on button click
@@ -832,7 +832,14 @@
                     closeModal();
                 }, 2200);
             });
-        });
+        }
+
+        // Initialize when DOM ready
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initModal);
+        } else {
+            initModal();
+        }
     </script>
     <!-- Opt-in Modal Overlay -->
     <div id="optin-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-secondary/85 backdrop-blur-md opacity-0 pointer-events-none modal-overlay transition-opacity duration-300">
