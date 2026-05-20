@@ -11,7 +11,7 @@ A aplicação foi construída utilizando tecnologias fundamentais da web moderna
 - **HTML5**: Fornece a estrutura semântica da página.
 - **Tailwind CSS (via CDN)**: Framework de CSS utilitário usado para estilização, layouts responsivos e design moderno. O uso via CDN indica que não há um processo de build local configurado (como Node.js, Webpack ou Vite).
 - **Vanilla JavaScript**: Utilizado diretamente dentro do arquivo `index.html` (no final do body) para lidar com interatividades simples, como a abertura do Menu Mobile e a lógica da Galeria de Imagens.
-- **Google Fonts**: Utilização da fonte *Quicksand* para garantir uma tipografia amigável, arredondada e moderna.
+- **System Fonts**: Utilização da stack de fontes nativas do sistema com foco em *San Francisco* para garantir uma tipografia moderna, limpa, profissional e de altíssima performance.
 - **Cloudinary**: Otimização e hospedagem de imagens. Os links das imagens no código apontam para `res.cloudinary.com`, garantindo um carregamento mais rápido e responsivo.
 
 ## 🎯 Objetivo Geral da Aplicação
