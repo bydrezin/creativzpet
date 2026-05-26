@@ -260,7 +260,6 @@ button {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
 
 /* Background Blobs */
@@ -438,7 +437,7 @@ button {
     z-index: 2;
     margin-left: -50px;
     margin-top: 0;
-    margin-bottom: -20px;
+    margin-bottom: -100px;
 }
 
 /* Floating "Today's Progress" Card */
