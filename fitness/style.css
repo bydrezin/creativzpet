@@ -426,7 +426,7 @@ button {
     position: relative;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .hero-main-image {
@@ -436,7 +436,7 @@ button {
     position: relative;
     z-index: 2;
     margin-left: -35px;
-    margin-top: -12px;
+    margin-top: -85px;
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
@@ -577,6 +577,7 @@ button {
     padding: 40px 0;
     position: relative;
     z-index: 5;
+    margin-top: -130px;
 }
 
 .approach-container {
@@ -1100,6 +1101,10 @@ button {
     
     .progress-card {
         right: 20px;
+    }
+    
+    .approach {
+        margin-top: 0;
     }
     
     .approach-grid {
