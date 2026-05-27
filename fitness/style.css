@@ -502,8 +502,8 @@ button {
 }
 
 .hero-main-image {
-    height: 125%;
-    max-height: 760px;
+    height: 90%;
+    max-height: 500px;
     width: auto;
     object-fit: contain;
     position: relative;
@@ -1104,7 +1104,7 @@ button {
     }
     
     .hero-main-image {
-        max-width: 340px;
+        max-width: 235px;
         margin-left: 0;
         margin-top: 0;
         margin-bottom: 0;
@@ -1161,7 +1161,8 @@ button {
         display: none;
     }
     
-    .btn-trial {
+    .btn-trial,
+    .header .btn-journey {
         display: none; /* hidden in desktop header on mobile, shown in drawer */
     }
     
@@ -1244,13 +1245,14 @@ button {
    ========================================== */
 .faq-section {
     padding: 100px 0;
-    background-color: var(--white);
+    background-color: #ffffff;
     position: relative;
-    border-bottom: 1px solid rgba(0, 174, 239, 0.05);
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .faq-container {
-    max-width: 800px; /* max-w-3xl equivalent (~768px-800px) */
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 24px;
     display: flex;
@@ -1267,7 +1269,7 @@ button {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 2.5rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
     color: var(--text-dark);
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -1275,14 +1277,13 @@ button {
     display: inline-block;
 }
 
-/* Decorative underline for FAQ section to match path section */
+.faq-title-accent {
+    color: var(--teal); /* Vibrant royal blue / teal brand color */
+}
+
+/* Remove decorative line to match clean reference style */
 .faq-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--teal);
-    margin: 12px auto 0 auto;
+    display: none;
 }
 
 .faq-subtitle {
@@ -1293,42 +1294,44 @@ button {
     margin: 0 auto;
 }
 
-/* Vertical list with small spacing (gap) */
 .faq-list {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* small gap between each question */
+    gap: 16px;
 }
 
-/* Style of the CLOSED Item */
+/* Style of the CLOSED Item - Clean Soft Borders */
 .faq-item {
-    background-color: #f4f5f7; /* Tom muito claro de cinza/azul */
-    border-radius: 9999px; /* Bordas totalmente arredondadas "pílula" */
-    border: 1px solid transparent;
-    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #ffffff;
+    border-radius: 16px !important;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
     overflow: hidden;
 }
 
-/* Style of the OPEN Item (Active) */
-.faq-item.active {
-    background-color: var(--white); /* Muda para fundo BRANCO */
-    border-radius: 24px; /* O border-radius deixa de ser pílula e passa a ser card arredondado normal */
-    border-color: rgba(0, 174, 239, 0.12); /* Borda muito sutil e clara */
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04); /* Sombra extremamente leve */
+.faq-item:hover {
+    background-color: #ffffff;
+    border-color: rgba(0, 174, 239, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 174, 239, 0.04);
 }
 
-/* Closed state button spacing and flexbox layout */
+/* Style of the OPEN Item (Active) */
+.faq-item.active {
+    background-color: #ffffff;
+    border-radius: 16px !important;
+    border-color: rgba(0, 174, 239, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 174, 239, 0.05);
+}
+
+/* Question button spacing */
 .faq-question-btn {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Separar a pergunta do ícone */
+    justify-content: space-between;
     align-items: center;
-    padding: 16px 28px; /* Padding generoso */
+    padding: 22px 28px;
     text-align: left;
     gap: 20px;
     background: none;
@@ -1346,55 +1349,56 @@ button {
     transition: color 0.3s ease;
 }
 
-.faq-item:hover .faq-question-text,
-.faq-item.active .faq-question-text {
-    color: var(--teal);
+.faq-item:hover .faq-question-text {
+    color: var(--text-dark);
 }
 
-/* Style of the Icon (Botão de abrir/fechar) */
+.faq-item.active .faq-question-text {
+    color: var(--text-dark);
+}
+
+/* Style of the Icon (Botão de abrir/fechar) - Vibrant Blue Circle with White Icon */
 .faq-icon-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%; /* Círculo perfeito */
-    background-color: var(--white); /* Fundo BRANCO */
-    color: var(--text-dark); /* Ícone escuro, fino e minimalista */
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                background-color 0.3s ease, 
-                color 0.3s ease;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--teal);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 174, 239, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     flex-shrink: 0;
 }
 
 .faq-item:hover .faq-icon-wrapper {
-    background-color: var(--teal-light);
-    color: var(--teal);
+    background-color: var(--teal-hover);
+    transform: scale(1.08);
 }
 
-/* When active (open), rotate the + icon to x and transition styles */
+/* Rotate the + icon on open state and change indicator color to match dark contrast */
 .faq-item.active .faq-icon-wrapper {
-    transform: rotate(45deg); /* Rotação suave de + para x */
-    background-color: var(--teal);
-    color: var(--white);
+    transform: rotate(45deg);
+    background-color: var(--text-dark);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
 }
 
 /* Response panel and transitions */
 .faq-answer-panel {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Abertura suave */
+    transition: max-height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .faq-answer-content {
-    padding: 0 28px 24px 28px; /* Padding de resposta */
+    padding: 0 28px 22px 28px;
 }
 
 /* Texto da Resposta */
 .faq-answer-content p {
-    font-size: 0.92rem; /* Fonte um pouco menor que a da pergunta */
-    color: var(--text-muted); /* Cor cinza escuro/médio */
+    font-size: 0.95rem;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -1406,9 +1410,32 @@ button {
     display: inline-block;
     margin-top: 8px;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--teal);
     font-style: italic;
     opacity: 0.9;
+}
+
+/* Learn More Bottom CTA button styled like screenshot */
+.faq-btn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--teal);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    margin-top: 36px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 174, 239, 0.15);
+    text-decoration: none;
+}
+
+.faq-btn-more:hover {
+    background-color: var(--teal-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 174, 239, 0.25);
 }
 
 /* FAQ Responsive Styles */
@@ -1433,5 +1460,6 @@ button {
         padding: 0 20px 20px 20px;
     }
 }
+
 
 
