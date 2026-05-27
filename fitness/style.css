@@ -2743,7 +2743,7 @@ button {
         transform: none !important;
         width: 90% !important;
         max-width: 480px !important;
-        margin: 40px auto 0 auto !important;
+        margin: -35px auto 0 auto !important;
         padding: 32px 20px !important;
         box-sizing: border-box !important;
         z-index: 10 !important;
