@@ -1642,31 +1642,24 @@ button {
 
 /* Mobile Devices */
 @media (max-width: 768px) {
-    /* Central column structural layout */
-    body {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        max-width: 480px !important;
-        margin: 0 auto !important;
-        overflow-x: hidden !important;
-        background-color: var(--bg-page);
-    }
-
-    body > header, body > section, body > footer, .results-container {
-        width: 95% !important;
-        max-width: 95% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-    }
-
+    /* Centralize containers instead of entire sections to preserve full-width backgrounds */
     .header-container, .hero-container, .programs-container, .path-container, 
     .video-container, .coach-container, .testimonials-container, .pricing-container, 
     .faq-container, .footer-container {
-        width: 100% !important;
+        width: 90% !important;
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .results-container {
+        width: 90% !important;
+        left: 5% !important;
+        right: 5% !important;
+        transform: none !important;
     }
 
     /* Uniform padding for balanced flow */
