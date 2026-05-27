@@ -2,16 +2,12 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Creativzlab® | Demonstração Fitness</title>
     <link rel="icon" type="image/webp" href="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779739308/Icon-Creativzlab-_For-DarkBG__1_zsvjqh.webp">
     <meta name="description" content="Treino personalizado. Nutrição mais inteligente. Resultados reais que duram. Junte-se à Vitalyze para começar sua jornada hoje.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS File -->
-    <link rel="stylesheet" href="./style.css?v=2026.05.27.v2">
+    <link rel="stylesheet" href="./style.css?v=2026.05.27.v3">
 </head>
 <body>
 
@@ -24,11 +20,12 @@
             
             <nav class="nav" id="main-nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#programs" class="nav-link">Programas</a></li>
-                    <li class="nav-item"><a href="#nutrition" class="nav-link">Nutrição</a></li>
-                    <li class="nav-item"><a href="#success" class="nav-link">Sucesso</a></li>
+                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#programs" class="nav-link">Consultoria</a></li>
+                    <li class="nav-item"><a href="#coach" class="nav-link">Sobre</a></li>
                     <li class="nav-item"><a href="#testimonials" class="nav-link">Depoimentos</a></li>
-                    <li class="nav-item"><a href="#pricing" class="nav-link">Preços</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Planos</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
                 </ul>
             </nav>
             
@@ -55,11 +52,12 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobile-drawer">
         <ul class="mobile-nav-list">
-            <li><a href="#programs" class="mobile-nav-link">Programas</a></li>
-            <li><a href="#nutrition" class="mobile-nav-link">Nutrição</a></li>
-            <li><a href="#success" class="mobile-nav-link">Sucesso</a></li>
+            <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+            <li><a href="#programs" class="mobile-nav-link">Consultoria</a></li>
+            <li><a href="#coach" class="mobile-nav-link">Sobre</a></li>
             <li><a href="#testimonials" class="mobile-nav-link">Depoimentos</a></li>
-            <li><a href="#pricing" class="mobile-nav-link">Preços</a></li>
+            <li><a href="#pricing" class="mobile-nav-link">Planos</a></li>
+            <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
             <li>
                 <a href="https://wa.me/558195795962?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20personalizados%20do%20Vitalyze." target="_blank" class="mobile-nav-link btn-journey" style="padding: 6px 6px 6px 20px; font-size: 0.9rem; gap: 12px; box-shadow: none; display: inline-flex; align-items: center; margin-top: 10px;">
                     <span>Fale no WhatsApp</span>
@@ -74,19 +72,14 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <!-- Background Elements -->
-        <div class="hero-bg-blob-right"></div>
-        <div class="hero-bg-blob-left"></div>
-        <div class="hero-bg-wave"></div>
+    <section class="hero" id="hero">
+        <div class="organic-blob blob-right blob-strong"></div>
         
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    MAIS FORTE<br>
-                    <span class="text-gradient">
-                        <span class="anim-char" style="animation-delay: 0.2s">A</span>&nbsp;<span class="anim-char" style="animation-delay: 0.3s">C</span><span class="anim-char" style="animation-delay: 0.35s">A</span><span class="anim-char" style="animation-delay: 0.4s">D</span><span class="anim-char" style="animation-delay: 0.45s">A</span>&nbsp;<span class="anim-char" style="animation-delay: 0.55s">D</span><span class="anim-char" style="animation-delay: 0.6s">I</span><span class="anim-char" style="animation-delay: 0.65s">A</span><span class="anim-char" style="animation-delay: 0.7s">.</span>
-                    </span>
+                    Mais forte<br>
+                    <span class="text-gradient">A cada dia.</span>
                 </h1>
                 
                 <p class="hero-subtitle">
@@ -95,7 +88,7 @@
                 </p>
                 
                 <div class="hero-cta-wrapper">
-                    <a href="#programs" class="btn-trial" id="btn-hero-plans" style="padding: 6px 6px 6px 20px; font-size: 0.9rem;">
+                    <a href="#pricing" class="btn-trial" id="btn-hero-plans" style="padding: 6px 6px 6px 20px; font-size: 0.9rem;">
                         <span>Ver Planos</span>
                         <span class="btn-trial-circle" style="width: 32px; height: 32px;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -124,7 +117,7 @@
                 <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779828916/Personal-Femea_mhztgo.webp" alt="Atleta fitness" class="hero-main-image">
                 
                 <!-- Today's Progress Card -->
-                <div class="progress-card" id="progress-card" style="width: 290px !important; padding: 24px !important; background: rgba(255, 255, 255, 0.18) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.3) !important; box-shadow: 0 25px 50px -12px rgba(0, 174, 239, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.45) !important; right: 0px !important; top: 0px !important; bottom: 195px !important; transform: none !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important;">
+                <div class="progress-card" id="progress-card">
                     <h3 class="progress-card-title">Progresso de Hoje</h3>
                     
                     <div class="progress-circle-wrapper">
@@ -200,7 +193,7 @@
         <!-- Bloco de Resultados no lugar de Nossa Abordagem (Hero) -->
         <div class="results-container" id="success">
             <div class="results-heading-col">
-                <h2 class="results-title">RESULTADOS QUE<br>FALAM POR<br>SI SÓ</h2>
+                <h2 class="results-title">Resultados que<br>falam por si só</h2>
                 <div class="squiggly-line">
                     <svg width="60" height="12" viewBox="0 0 60 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 10C8 6 12 2 18 2C24 2 28 8 34 8C40 8 44 2 50 2C54 2 56.5 5 58 7" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/>
@@ -261,8 +254,9 @@
 
     <!-- Choose Your Path Section -->
     <section class="path-section" id="programs">
+        <div class="organic-blob blob-left blob-weak"></div>
         <div class="path-container">
-            <h2 class="path-title">COM A MINHA <span class="text-gradient">CONSULTORIA</span>, VOCÊ VAI TER:</h2>
+            <h2 class="path-title">Com a minha <span class="text-gradient">consultoria</span>, você vai ter:</h2>
             
             <div class="path-split">
                 <!-- Left: 4 thin stacked cards -->
@@ -306,7 +300,7 @@
 
                 <!-- Right: Large image -->
                 <div class="path-img-col">
-                    <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779857160/letsgo_vaqqbi.webp" alt="Consultoria Fitness" class="path-side-img">
+                    <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779893797/letsgo_b4l9ym.webp" alt="Consultoria Fitness" class="path-side-img">
                 </div>
             </div>
         </div>
@@ -315,90 +309,47 @@
 
     <!-- Coach Section -->
     <section class="coach-section" id="coach">
+        <div class="organic-blob blob-right blob-weak" style="top: 30%"></div>
         <div class="coach-container">
             <div class="coach-layout">
                 <!-- Left Column (Alex Simon Card) -->
                 <div class="coach-left-col">
                     <div class="coach-profile-card">
-                        <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779854489/Gemini_Generated_Image_gej3tlgej3tlgej3_epu3nt.webp" alt="Alex Simon - Treinador" class="coach-card-img">
+                        <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779854489/Gemini_Generated_Image_gej3tlgej3tlgej3_epu3nt.webp" alt="Luiza Personal Trainer" class="coach-card-img">
                         
-                        <div class="coach-card-badge">
-                            <div class="coach-badge-logo">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 22h20L12 2z"/></svg>
-                            </div>
+                        <div class="coach-play-btn-glass">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         
-                        <div class="coach-card-info">
-                            <h3 class="coach-card-name">Alex Simon</h3>
-                            <span class="coach-card-role">Treinador de Fitness Certificado</span>
-                        </div>
+                        <div class="coach-cref-badge" style="position: absolute; top: 24px; right: 24px; z-index: 10; margin: 0;">CREF: 012345-G/PE</div>
                         
-                        <div class="coach-card-stats">
-                            <div class="coach-stat-item">
-                                <span class="coach-stat-value">8+</span>
-                                <span class="coach-stat-label">Anos de Experiência</span>
-                            </div>
-                            <div class="coach-stat-divider"></div>
-                            <div class="coach-stat-item">
-                                <span class="coach-stat-value">500+</span>
-                                <span class="coach-stat-label">Alunos Transformados</span>
-                            </div>
+                        <div class="coach-card-info" style="bottom: 32px;">
+                            <h3 class="coach-card-name" style="font-size: 1.8rem;">Luiza Personal Trainer</h3>
+                            <span class="coach-card-role">Treinadora de Fitness Certificada</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Right Column -->
-                <div class="coach-right-col">
-                    <span class="coach-tag">• Conheça o Coach</span>
-                    <h2 class="coach-title">GUIADO PELA EXPERIÊNCIA<br><span class="text-gradient">MOVIDO POR SEUS RESULTADOS</span></h2>
-                    <p class="coach-desc">Com mais de 8 anos de experiência, já trabalhei com centenas de pessoas — ajudando-as a perder gordura, ganhar força e retomar o controle de suas rotinas de forma definitiva.</p>
+                <div class="coach-right-col" style="display: flex; flex-direction: column; justify-content: center;">
+                    <h2 class="coach-title">Sobre a <span class="text-gradient">Luiza</span></h2>
                     
-                    <!-- Icon Badges Row -->
-                    <div class="coach-badges-row">
-                        <div class="coach-badge-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-                        <div class="coach-badge-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 12h18"/></svg></div>
-                        <div class="coach-badge-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                        <div class="coach-badge-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                    <div class="coach-desc-block">
+                        <p class="coach-desc">Sou a Luiza Trainer, e minha história começou com a obesidade. Passei por uma transformação profunda: emagreci quase 40 kg e ganhei mais de 20 kg de massa muscular. Essa mudança não foi apenas física — foi o que despertou em mim a paixão que se tornou minha profissão.</p>
+                        <p class="coach-desc" style="margin-top: 16px;">Há mais de 15 anos, trabalho ajudando pessoas a alcançarem seus melhores resultados, com acompanhamentos totalmente individualizados, baseados em ciência, prática e empatia.</p>
                     </div>
                     
                     <!-- Bottom Grid -->
-                    <div class="coach-bottom-grid">
-                        <!-- AI Tools Card -->
-                        <div class="coach-ai-card">
-                            <div class="coach-ai-header">
-                                <h4 class="coach-ai-title">Ferramentas de IA</h4>
-                                <p class="coach-ai-desc">Com o poder da IA avançada, personalizo planos de treino adaptados às suas metas e necessidades exclusivas.</p>
+                    <div class="coach-bottom-grid" style="grid-template-columns: 1fr; margin-top: 24px;">
+                        <!-- Single info card -->
+                        <div class="coach-ai-card coach-dark-card" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 24px; background: #0b131a; border: none; gap: 24px; position: relative; overflow: hidden;">
+                            <div class="coach-stat-item" style="display: flex; flex-direction: row; align-items: center; gap: 12px; flex-shrink: 0; position: relative; z-index: 1;">
+                                <span class="coach-stat-value" style="color: #ffffff; font-size: 2.5rem; line-height: 1;">15+</span>
+                                <span class="coach-stat-label" style="color: #94a3b8; text-align: left; max-width: 80px; line-height: 1.2;">Anos de Experiência</span>
                             </div>
-                            <button class="coach-ai-arrow-btn" aria-label="Acessar ferramenta">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </button>
-                        </div>
-                        
-                        <!-- Training Progress Card -->
-                        <div class="coach-progress-card">
-                            <div class="coach-progress-header">
-                                <div class="coach-progress-title-row">
-                                    <span class="coach-progress-bullet"></span>
-                                    <span class="coach-progress-title">Treino de Hoje</span>
-                                </div>
-                                <span class="coach-progress-kcal">2.540 kcal</span>
-                            </div>
-                            
-                            <p class="coach-progress-subtitle">Você se manteve consistente e superou seus limites esta semana!</p>
-                            
-                            <div class="coach-progress-stats-row">
-                                <div class="coach-progress-stat">
-                                    <span class="coach-progress-val">120 min</span>
-                                    <span class="coach-progress-lbl">• Cardio</span>
-                                </div>
-                                <div class="coach-progress-stat">
-                                    <span class="coach-progress-val">120 min</span>
-                                    <span class="coach-progress-lbl">• Corrida</span>
-                                </div>
-                                <div class="coach-progress-stat">
-                                    <span class="coach-progress-val">120 min</span>
-                                    <span class="coach-progress-lbl">• Vitalidade</span>
-                                </div>
+                            <div class="coach-stat-divider" style="background: rgba(255, 255, 255, 0.15); width: 1px; height: 50px; flex-shrink: 0; position: relative; z-index: 1;"></div>
+                            <div class="coach-stat-text" style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; text-align: left; position: relative; z-index: 1;">
+                                Atendo online e também presencialmente em Recife, PE. Sim, sou eu mesmo quem acompanha cada aluno. E posso dizer com toda certeza: eu amo o que faço.
                             </div>
                         </div>
                     </div>
@@ -410,308 +361,201 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
-        <!-- Background Elements -->
-        <div class="testimonials-bg-blob-right"></div>
-        <div class="testimonials-bg-blob-left"></div>
-        
+        <div class="organic-blob blob-left blob-strong" style="top: 10%"></div>
         <div class="testimonials-container">
-            <div class="testimonials-split-layout">
-                
-                <!-- Left Column: Fixed Rating Summary -->
-                <div class="testimonials-left-column">
-                    <h3 class="testimonials-column-title">AVALIAÇÃO <span class="text-gradient">MÉDIA</span></h3>
-                    <div class="rating-summary-card">
-                        <div class="rating-header-row">
-                            <span class="rating-score-big">4.9</span>
-                            <div class="rating-score-stars-col">
-                                <div class="rating-stars-gold">
-                                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                    <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                </div>
-                                <span class="rating-count-text">120+ Avaliações</span>
-                            </div>
+            <div class="testimonials-header-center">
+                <h2 class="testimonials-main-title">Faça parte do <span class="text-gradient">time que vence!</span></h2>
+            </div>
+            
+            <div class="testimonials-carousel-wrapper">
+                <div class="testimonials-carousel">
+                    <!-- Card 1 -->
+                    <div class="testimonial-new-card">
+                        <div class="testimonial-new-image" style="background-image: url('https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779896301/lets2_g7sawm.png');">
+                            <div class="radial-blend"></div>
                         </div>
-                        
-                        <!-- Progress Bars (all 5 levels) -->
-                        <div class="rating-bars-container">
-                            <div class="rating-bar-row">
-                                <span class="rating-bar-num">5</span>
-                                <div class="rating-bar-track">
-                                    <div class="rating-bar-fill" style="width: 95%;"></div>
+                        <div class="testimonial-new-content">
+                            <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                                        <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Felipe Silva</h3>
+                                        <div class="testimonial-new-stars-svg" style="margin: 0;">
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span class="rating-bar-percent">95%</span>
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
                             </div>
-                            <div class="rating-bar-row">
-                                <span class="rating-bar-num">4</span>
-                                <div class="rating-bar-track">
-                                    <div class="rating-bar-fill" style="width: 5%;"></div>
-                                </div>
-                                <span class="rating-bar-percent">5%</span>
-                            </div>
-                            <div class="rating-bar-row">
-                                <span class="rating-bar-num">3</span>
-                                <div class="rating-bar-track">
-                                    <div class="rating-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <span class="rating-bar-percent">0%</span>
-                            </div>
-                            <div class="rating-bar-row">
-                                <span class="rating-bar-num">2</span>
-                                <div class="rating-bar-track">
-                                    <div class="rating-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <span class="rating-bar-percent">0%</span>
-                            </div>
-                            <div class="rating-bar-row">
-                                <span class="rating-bar-num">1</span>
-                                <div class="rating-bar-track">
-                                    <div class="rating-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <span class="rating-bar-percent">0%</span>
-                            </div>
+                            <p class="testimonial-new-text">"Caramba, o PT me transformou completamente! Eu era só pele e osso e agora tenho músculo de verdade. Ele me deu todo o suporte que eu precisava. Valeu muito a pena!"</p>
+                            <div class="testimonial-decoration"></div>
                         </div>
-                        
-                        <!-- Write your Review info stack (as in reference image) -->
-                        <div class="rating-write-review-info">
-                            <h4 class="rating-write-title">Escreva sua avaliação</h4>
-                            <p class="rating-write-desc">Compartilhe sua experiência e ajude outras pessoas a transformarem sua rotina com saúde.</p>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="testimonial-new-card">
+                        <div class="testimonial-new-image" style="background-image: url('https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779896300/lets3_rxqg36.png');">
+                            <div class="radial-blend"></div>
                         </div>
-                        
-                        <!-- Google Review CTA Button -->
-                        <a href="https://wa.me/558195795962?text=Ol%C3%A1!%20Gostaria%20de%20deixar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" class="google-write-review-btn">
-                            <img class="google-btn-g-logo" src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google Logo" width="18" height="18">
-                            <span>Deixe sua avaliação no Google</span>
-                        </a>
+                        <div class="testimonial-new-content">
+                            <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                                        <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Larissa Costa</h3>
+                                        <div class="testimonial-new-stars-svg" style="margin: 0;">
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
+                            </div>
+                            <p class="testimonial-new-text">"Não tenho palavras para agradecer ao meu PT. Consegui definir meu abdômen e ganhar massa de forma saudável. Sinto-me muito mais forte e segura. Recomendo de olhos fechados!"</p>
+                            <div class="testimonial-decoration"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="testimonial-new-card">
+                        <div class="testimonial-new-image" style="background-image: url('https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779896300/lets1_paogyt.png');">
+                            <div class="radial-blend"></div>
+                        </div>
+                        <div class="testimonial-new-content">
+                            <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                                        <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Marcos Pereira</h3>
+                                        <div class="testimonial-new-stars-svg" style="margin: 0;">
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
+                            </div>
+                            <p class="testimonial-new-text">"Achava que depois dos 30 não dava mais, mas com o acompanhamento certo do personal, tudo mudou. Os treinos foram duros, mas o resultado fala por si só. Melhor investimento!"</p>
+                            <div class="testimonial-decoration"></div>
+                        </div>
                     </div>
                 </div>
-                <!-- Right Column: Scrolling Testimonials -->
-                <div class="testimonials-right-column">
-                    <h3 class="testimonials-column-title">FEEDBACK DOS <span class="text-gradient">ALUNOS</span></h3>
-                    
-                    <div class="testimonials-slider-container">
-                        <div class="testimonials-vertical-window">
-                            <div class="testimonials-vertical-track">
-                                <!-- Testimonial 1 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces&q=80" alt="Camila Rodrigues" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Camila Rodrigues</h4>
-                                                <span class="testimonial-role">Aluna de Personal</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Excelente profissional! Consegui perder 10kg em 4 meses com treinos super dinâmicos. Eu sempre odiei musculação e começava para parar logo em seguida, mas a didática e o incentivo dele mudaram minha visão. Nunca pensei que diria isso, mas hoje não vivo sem treinar. Melhor investimento na minha saúde!"</p>
-                                </div>
+            </div>
+            
+            <!-- Controls beneath the carousel -->
+            <div class="testimonials-controls">
+                <div class="testimonials-dots">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <!-- Testimonial 2 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80" alt="Rafael Mendes" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Rafael Mendes</h4>
-                                                <span class="testimonial-role">Aluno de Consultoria</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Treino pesado e com muita técnica! Eu já treinava há uns 3 anos, mas tinha estagnado e não via mais resultados. Com a periodização impecável dele e as correções biomecânicas, consegui ganhar massa magra de verdade e bati meus recordes de carga. Recomendo de olhos fechados para quem quer evoluir."</p>
-                                </div>
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-outer-container">
+            <div class="pricing-inner-box">
+                <div class="pricing-header">
+                    <div>
+                        <h2 class="pricing-title">Escolha o plano que mais <span class="pricing-title-accent">combina com você!</span></h2>
+                        <p class="pricing-subtitle">Do essencial ao avançado, temos o pacote ideal para atender às suas necessidades</p>
+                    </div>
+                </div>
 
-                                <!-- Testimonial 3 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=80" alt="Felipe Costa" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Felipe Costa</h4>
-                                                <span class="testimonial-role">Aluno de Reabilitação</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Comecei a treinar após uma cirurgia no joelho e estava com muito medo de me machucar de novo. Ele foi extremamente cuidadoso, adaptou todos os exercícios e fez um trabalho de fortalecimento perfeito em conjunto com meu fisioterapeuta. Hoje me sinto 100% recuperado, seguro e mais forte do que antes."</p>
-                                </div>
+                <div class="pricing-toggle-wrapper">
+                    <div class="pricing-toggle">
+                        <button class="toggle-btn active" data-period="mensal">Mensal</button>
+                        <button class="toggle-btn" data-period="trimestral">Trimestral</button>
+                        <button class="toggle-btn" data-period="semestral">Semestral</button>
+                        <div class="toggle-pill"></div>
+                    </div>
+                </div>
 
-                                <!-- Testimonial 4 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" alt="Amanda Oliveira" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Amanda Oliveira</h4>
-                                                <span class="testimonial-role">Aluna de Personal</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Sabe aquela preguiça absurda de ir para a academia? Sumiu! O treino é focado, divertido e ele não deixa a peteca cair nem nos dias em que chego cansado do trabalho. Tem uma energia contagiante e sabe exatamente como extrair o nosso melhor. Nota 1000!"</p>
-                                </div>
-
-                                <!-- Testimonial 5 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces&q=80" alt="Thiago Santos" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Thiago Santos</h4>
-                                                <span class="testimonial-role">Consultoria Online</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Faço a consultoria online já faz seis meses e parece que ele está do meu lado na academia. O aplicativo é super fácil de usar, os vídeos explicativos são muito claros e o suporte pelo WhatsApp é rápido. Ele sempre ajusta meu treino de acordo com a estrutura da minha academia ou viagens. Serviço impecável."</p>
-                                </div>
-
-                                <!-- Testimonial 6 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces&q=80" alt="Mariana Albuquerque" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Mariana Albuquerque</h4>
-                                                <span class="testimonial-role">Aluna de Personal</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"O que mais me impressiona é o alto nível de profissionalismo. Em um ano de treinos, nunca chegou atrasado. Tem o planejamento sempre na ponta do lápis, acompanha cada movimento para evitar posturas erradas e respeita muito os limites do aluno. Um exemplo de educador físico."</p>
-                                </div>
-
-                                <!-- Testimonial 7 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces&q=80" alt="Luciana Gomes" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Luciana Gomes</h4>
-                                                <span class="testimonial-role">Familiar de Aluna</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Contratei o serviço para minha mãe de 68 anos e foi a melhor escolha que fizemos. Ela sofria com dores nas costas e falta de mobilidade. Hoje ela tem muito mais disposição, consegue fazer as atividades de casa sem dor e ele tem uma paciência de ouro com ela. Muito grata por todo o carinho e dedicação!"</p>
-                                </div>
-
-                                <!-- Testimonial 8 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces&q=80" alt="Carlos Eduardo Lima" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Carlos Eduardo Lima</h4>
-                                                <span class="testimonial-role">Executivo / Aluno</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Tenho uma rotina maluca de trabalho e pouco tempo livre. Pedi treinos que fossem curtos, mas eficientes. Ele montou exatamente o que eu precisava! Treino em 45 minutos intensos, sem enrolação, e saio pingando. Finalmente encontrei um personal que entende a vida corrida do cliente."</p>
-                                </div>
-
-                                <!-- Testimonial 9 -->
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card-header">
-                                        <div class="testimonial-user-profile">
-                                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces&q=80" alt="Beatriz Nogueira" class="testimonial-avatar" loading="lazy">
-                                            <div class="testimonial-user-info">
-                                                <h4 class="testimonial-name">Beatriz Nogueira</h4>
-                                                <span class="testimonial-role">Aluna de Personal</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-rating-source">
-                                            <div class="testimonial-stars-svg">
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                                <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>
-                                            </div>
-                                            <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" alt="Google" class="testimonial-google-logo" width="16" height="16">
-                                        </div>
-                                    </div>
-                                    <p class="testimonial-text">"Não é aquele personal que só conta até 10 e manda você levantar peso. Ele explica o porquê de cada exercício, qual músculo estamos ativando e como a respiração ajuda. A gente não só malha, a gente aprende a treinar de verdade e ganha muita consciência corporal."</p>
-                                </div>
-                            </div>
+                <div class="pricing-grid">
+                    <!-- Card 1: Bronze -->
+                    <div class="pricing-card">
+                        <div class="card-icon-wrapper">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         </div>
-                        <div class="testimonials-dots-container"></div>
+                        <h3 class="card-title">Bronze</h3>
+                        <div class="card-price-container">
+                            <span class="price-currency">R$</span>
+                            <span class="price-value" data-mensal="250,00" data-trimestral="599,00" data-semestral="999,00">250,00</span>
+                        </div>
+                        <p class="price-period" data-mensal="por mês" data-trimestral="por trimestre" data-semestral="por semestre">por mês</p>
+                        <p class="card-desc">Para iniciantes que querem sair do sedentarismo</p>
+                        
+                        <ul class="card-features">
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <span>2 treinos por semana (8 no mês)</span>
+                            </li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Planilha de treinos personalizada</span></li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Suporte via WhatsApp</span></li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Orientações sobre execução</span></li>
+                        </ul>
+                        <button class="btn-select-plan">Quero esse plano!</button>
+                    </div>
+
+                    <!-- Card 2: Prata -->
+                    <div class="pricing-card pricing-card-highlight">
+                        <div class="testimonial-decoration"></div>
+                        <div class="card-badge">Mais popular</div>
+                        <div class="card-icon-wrapper highlight-icon">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
+                        <h3 class="card-title">Prata</h3>
+                        <div class="card-price-container">
+                            <span class="price-currency">R$</span>
+                            <span class="price-value" data-mensal="350,00" data-trimestral="899,00" data-semestral="1.599,00">350,00</span>
+                        </div>
+                        <p class="price-period" data-mensal="por mês" data-trimestral="por trimestre" data-semestral="por semestre">por mês</p>
+                        <p class="card-desc">Para quem já treina e quer evoluir em performance</p>
+                        
+                        <ul class="card-features">
+                            <li>
+                                <svg class="check-icon highlight-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <span>3 treinos por semana (12 no mês)</span>
+                            </li>
+                            <li><svg class="check-icon highlight-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Planilha de treinos personalizada</span></li>
+                            <li><svg class="check-icon highlight-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Suporte via WhatsApp</span></li>
+                            <li><svg class="check-icon highlight-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Orientações sobre execução</span></li>
+                        </ul>
+                        <button class="btn-select-plan highlight-btn">Quero esse plano!</button>
+                    </div>
+
+                    <!-- Card 3: Ouro -->
+                    <div class="pricing-card">
+                        <div class="card-icon-wrapper">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <h3 class="card-title">Ouro</h3>
+                        <div class="card-price-container">
+                            <span class="price-currency">R$</span>
+                            <span class="price-value" data-mensal="550,00" data-trimestral="1.499,00" data-semestral="2.699,00">550,00</span>
+                        </div>
+                        <p class="price-period" data-mensal="por mês" data-trimestral="por trimestre" data-semestral="por semestre">por mês</p>
+                        <p class="card-desc">Para quem deseja priorizar a calistenia e performance</p>
+                        
+                        <ul class="card-features">
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <span>4 a 5 treinos por semana (até 20 no mês)</span>
+                            </li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Planilha de treinos personalizada</span></li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Suporte via WhatsApp</span></li>
+                            <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>Vídeos explicativos de cada movimento</span></li>
+                        </ul>
+                        <button class="btn-select-plan">Quero esse plano!</button>
                     </div>
                 </div>
             </div>
@@ -720,81 +564,153 @@
 
 <!-- FAQ Section -->
     <section class="faq-section" id="faq">
+        <div class="organic-blob blob-right blob-strong" style="top: 20%; transform: rotate(180deg)"></div>
         <div class="faq-container">
             <div class="faq-header">
-                <h2 class="faq-title">DÚVIDAS <span class="faq-title-accent">COMUNS</span></h2>
-                <p class="faq-subtitle">Tem alguma pergunta sobre o nosso método? Encontre aqui as respostas rápidas para começar com total clareza e segurança.</p>
+                <h2 class="faq-title">Perguntas <span class="faq-title-accent">frequentes</span></h2>
             </div>
             
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question-btn" aria-expanded="false">
-                        <span class="faq-question-text">Não treino há anos, o método serve para mim?</span>
+                        <span class="faq-question-text">Como funciona a consultoria?</span>
                         <span class="faq-icon-wrapper">
-                            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19" class="line-vert"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </span>
                     </button>
                     <div class="faq-answer-panel">
                         <div class="faq-answer-content">
-                            <p>Absolutamente. A grande vantagem de um acompanhamento personalizado de alto nível é que o planeamento é feito à medida da sua realidade atual, e não o oposto. Se está inativo há anos, começar com um plano genérico de ginásio é o caminho mais rápido para a frustração e para as dores.</p>
-                            <p>O nosso método começa com uma fase de adaptação anatómica e metabólica. Vamos respeitar o seu ponto de partida e evoluir de forma totalmente segura, sem treinos exaustivos desnecessários. O objetivo é criar o hábito com inteligência, e não pela força bruta.</p>
+                            <p>Após a confirmação do pagamento, você preencherá uma anamnese (questionário) completa. Com base nas suas respostas, a Luiza Personal Trainer montará 100% do seu treino e da sua dieta, totalmente personalizados para os seus objetivos, limitações e rotina.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question-btn" aria-expanded="false">
-                        <span class="faq-question-text">Como funcionam as renovações e a fidelização?</span>
+                        <span class="faq-question-text">Em quanto tempo recebo meu plano?</span>
                         <span class="faq-icon-wrapper">
-                            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19" class="line-vert"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </span>
                     </button>
                     <div class="faq-answer-panel">
                         <div class="faq-answer-content">
-                            <p>O nosso compromisso é com o seu resultado, não em prendê-lo através de burocracias. Trabalhamos com planos de acompanhamento desenhados com a duração exata para atingir o seu objetivo específico (mensal, trimestral ou semestral).</p>
-                            <p>Não existem taxas ocultas de cancelamento ou fidelizações forçadas. A sua permanência connosco será motivada exclusivamente pelos resultados que vai começar a ver no espelho e na sua disposição diária, e não por uma cláusula de contrato.</p>
+                            <p>O prazo de entrega do seu planejamento completo (treino e dieta) é de até 3 a 5 dias úteis após o preenchimento e envio do seu questionário de avaliação.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question-btn" aria-expanded="false">
-                        <span class="faq-question-text">Tenho uma lesão no joelho/coluna, posso fazer a consultoria?</span>
+                        <span class="faq-question-text">O treino e a dieta são um padrão pronto?</span>
                         <span class="faq-icon-wrapper">
-                            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19" class="line-vert"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </span>
                     </button>
                     <div class="faq-answer-panel">
                         <div class="faq-answer-content">
-                            <p>Não só pode, como deve. Treinar com dor sem orientação é perigoso, mas o sedentarismo apenas irá agravar a sua lesão a longo prazo. Na nossa avaliação inicial detalhada, faremos um levantamento do seu historial clínico e limitações articulares.</p>
-                            <p>O seu programa será desenhado cirurgicamente para evitar qualquer sobrecarga na área afetada, focando no fortalecimento dos músculos estabilizadores para promover alívio da dor e maior qualidade de vida. <span class="faq-highlight-note">(Nota: O nosso planeamento atua em total sinergia com a alta clínica do seu médico ou fisioterapeuta).</span></p>
+                            <p>Não! Tudo é feito de forma totalmente individualizada. A Luiza Personal Trainer vai avaliar seu nível de experiência, objetivo, restrições e até os alimentos da sua preferência para montar o seu planejamento.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question-btn" aria-expanded="false">
-                        <span class="faq-question-text">O que acontece se eu precisar de viajar em trabalho?</span>
+                        <span class="faq-question-text">Como vou tirar minhas dúvidas?</span>
                         <span class="faq-icon-wrapper">
-                            <svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19" class="line-vert"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </span>
                     </button>
                     <div class="faq-answer-panel">
                         <div class="faq-answer-content">
-                            <p>O planeamento adapta-se à sua rotina, não o contrário. Compreendemos que profissionais e executivos de alto rendimento têm agendas imprevisíveis e viajam com frequência. Quando isso acontecer, basta informar-nos através do suporte.</p>
-                            <p>O seu treino da semana será imediatamente readaptado para o cenário que tiver disponível: seja utilizando as máquinas do ginásio do hotel ou recebendo um protocolo rápido de 20 minutos com o peso do corpo, que pode ser executado no próprio quarto. O método foi criado para eliminar desculpas e garantir que mantém a consistência, independentemente do local do mundo em que se encontre.</p>
+                            <p>Você terá suporte total! Todas as suas dúvidas sobre o treino, execução dos exercícios, dieta e suplementação poderão ser tiradas diretamente com a Luiza Personal Trainer através da nossa plataforma exclusiva.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        <span class="faq-question-text">Sou iniciante e não sei fazer os exercícios. A consultoria serve para mim?</span>
+                        <span class="faq-icon-wrapper">
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-content">
+                            <p>Com certeza. Mesmo que você nunca tenha pisado em uma academia, o plano é para você. A Luiza Personal Trainer disponibiliza vídeos explicativos mostrando a execução correta de cada exercício prescrito no seu treino para que você tenha total segurança.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        <span class="faq-question-text">Posso treinar em casa?</span>
+                        <span class="faq-icon-wrapper">
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-content">
+                            <p>Sim! Se você não frequenta uma academia, seu treino será montado e adaptado exclusivamente com exercícios que podem ser feitos no conforto da sua casa, utilizando o peso do seu próprio corpo ou os equipamentos que você tiver disponíveis.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        <span class="faq-question-text">Terei que tomar suplementos ou fazer dietas muito restritivas?</span>
+                        <span class="faq-icon-wrapper">
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-content">
+                            <p>A suplementação não é obrigatória; ela só será indicada se realmente fizer sentido para o seu caso e couber no seu orçamento. A dieta será flexível e calculada dentro da sua realidade, sem restrições extremas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question-btn" aria-expanded="false">
+                        <span class="faq-question-text">De quanto em quanto tempo o meu treino e dieta são trocados?</span>
+                        <span class="faq-icon-wrapper">
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16" class="line-vert"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-content">
+                            <p>As atualizações de treino e dieta são feitas periodicamente de acordo com o plano contratado. A Luiza Personal Trainer fará os ajustes necessários conforme o seu corpo for evoluindo, garantindo que você não estagne nos resultados.</p>
                         </div>
                     </div>
                 </div>
@@ -802,42 +718,7 @@
         </div>
     </section>
 
-    <!-- Results section content has been moved into the Hero section to replace the old Approach block -->
 
-    <!-- Footer CTA Section -->
-    <section class="footer-cta" id="pricing">
-        <div class="footer-cta-container">
-            <div class="footer-cta-image-col">
-                <img src="assets/images/footer_athlete.png" alt="Atleta com fones de ouvido" class="footer-cta-image">
-                <div class="radial-blend"></div>
-            </div>
-            
-            <div class="footer-cta-content-col">
-                <h2 class="footer-cta-title">SUA TRANSFORMAÇÃO<br>COMEÇA HOJE</h2>
-                <p class="footer-cta-desc">Dê o primeiro passo em direção a uma versão sua mais saudável, forte e realizada.</p>
-                
-                <a href="#trial" class="btn-get-started" id="btn-footer-started">
-                    <span>Começar Grátis</span>
-                    <span class="btn-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </span>
-                </a>
-            </div>
-            
-            <!-- Decorative dots grid -->
-            <div class="dots-pattern">
-                <svg width="80" height="120" fill="currentColor" class="dots-svg">
-                    <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.15)"/>
-                    </pattern>
-                    <rect width="80" height="120" fill="url(#dot-pattern)"/>
-                </svg>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Copyright -->
     <footer class="bottom-footer">
@@ -1006,106 +887,192 @@
                 });
             });
             
-            // Testimonials Vertical Slider Controller
-            const testimonialsTrack = document.querySelector('.testimonials-vertical-track');
-            const testimonialsWindow = document.querySelector('.testimonials-vertical-window');
-            const testimonialsDotsContainer = document.querySelector('.testimonials-dots-container');
-            const originalTestimonialCards = Array.from(testimonialsTrack.querySelectorAll('.testimonial-card'));
-            const numOriginal = originalTestimonialCards.length;
+            // Testimonials Horizontal Carousel Autoplay
+            const carousel = document.querySelector('.testimonials-carousel');
+            const cards = Array.from(document.querySelectorAll('.testimonial-new-card'));
+            const dotsContainer = document.querySelector('.testimonials-dots');
             
-            if (testimonialsTrack && testimonialsWindow && testimonialsDotsContainer && numOriginal > 0) {
-                // Clone first card to allow smooth infinite loop
-                const firstCardClone = originalTestimonialCards[0].cloneNode(true);
-                firstCardClone.classList.add('testimonial-card-clone');
-                testimonialsTrack.appendChild(firstCardClone);
+            if (carousel && cards.length > 0 && dotsContainer) {
+                let currentIndex = 0;
+                let autoPlayInterval;
                 
-                const allTestimonialCards = Array.from(testimonialsTrack.querySelectorAll('.testimonial-card'));
-                
-                // Dynamically generate dots based on original testimonials count
-                originalTestimonialCards.forEach((_, idx) => {
-                    const dotBtn = document.createElement('button');
-                    dotBtn.classList.add('slider-dot');
-                    if (idx === 0) dotBtn.classList.add('active');
-                    dotBtn.setAttribute('aria-label', `Ir para depoimento ${idx + 1}`);
-                    
-                    dotBtn.addEventListener('click', () => {
-                        goToTestimonialIndex(idx);
-                        resetTestimonialAutoplay();
+                // Create dots dynamically based on number of cards
+                cards.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('slider-dot');
+                    if(index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                        resetInterval();
                     });
-                    testimonialsDotsContainer.appendChild(dotBtn);
+                    dotsContainer.appendChild(dot);
                 });
                 
-                const testimonialDots = Array.from(testimonialsDotsContainer.querySelectorAll('.slider-dot'));
-                let currentTestimonialIndex = 0;
-                let testimonialAutoplayInterval;
-                let isTestimonialTransitioning = false;
+                const dots = Array.from(dotsContainer.querySelectorAll('.slider-dot'));
                 
-                function updateTestimonialDots(activeIdx) {
-                    const targetDotIdx = activeIdx % numOriginal;
-                    testimonialDots.forEach((dot, idx) => {
-                        if (idx === targetDotIdx) {
-                            dot.classList.add('active');
-                        } else {
-                            dot.classList.remove('active');
-                        }
+                function updateDots(index) {
+                    dots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === index);
                     });
                 }
                 
-                function goToTestimonialIndex(index, animate = true) {
-                    if (index < 0 || index >= allTestimonialCards.length) return;
-                    isTestimonialTransitioning = true;
-                    currentTestimonialIndex = index;
-                    
-                    const targetCard = allTestimonialCards[currentTestimonialIndex];
-                    const scrollY = targetCard.offsetTop;
-                    
-                    if (animate) {
-                        testimonialsTrack.style.transition = 'transform 1s cubic-bezier(0.25, 1, 0.5, 1)';
-                    } else {
-                        testimonialsTrack.style.transition = 'none';
+                function goToSlide(index) {
+                    if (index < 0 || index >= cards.length) return;
+                    currentIndex = index;
+                    carousel.scrollTo({
+                        left: cards[index].offsetLeft - 20, // 20px offset to match padding
+                        behavior: 'smooth'
+                    });
+                    updateDots(currentIndex);
+                }
+                
+                function nextSlide() {
+                    currentIndex++;
+                    if (currentIndex >= cards.length) {
+                        currentIndex = 0;
                     }
-                    
-                    testimonialsTrack.style.transform = `translateY(${-scrollY}px)`;
-                    updateTestimonialDots(currentTestimonialIndex);
-                    
-                    if (animate) {
-                        setTimeout(() => {
-                            isTestimonialTransitioning = false;
-                            if (currentTestimonialIndex === numOriginal) {
-                                goToTestimonialIndex(0, false);
-                            }
-                        }, 1000);
-                    } else {
-                        testimonialsTrack.getBoundingClientRect();
-                        isTestimonialTransitioning = false;
+                    goToSlide(currentIndex);
+                }
+                
+                function startInterval() {
+                    autoPlayInterval = setInterval(nextSlide, 3000);
+                }
+                
+                function resetInterval() {
+                    clearInterval(autoPlayInterval);
+                    startInterval();
+                }
+                
+                // Pause on hover
+                carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                carousel.addEventListener('mouseleave', startInterval);
+                
+                // Update active dot when user scrolls manually
+                carousel.addEventListener('scroll', () => {
+                    const scrollLeft = carousel.scrollLeft;
+                    const cardWidth = cards[0].offsetWidth + 32; // card width + gap
+                    let newIndex = Math.round(scrollLeft / cardWidth);
+                    if (newIndex >= cards.length) newIndex = cards.length - 1;
+                    if (newIndex !== currentIndex) {
+                        currentIndex = newIndex;
+                        updateDots(currentIndex);
+                        resetInterval();
                     }
-                }
+                }, {passive: true});
                 
-                function nextTestimonialSlide() {
-                    if (isTestimonialTransitioning) return;
-                    goToTestimonialIndex(currentTestimonialIndex + 1, true);
-                }
-                
-                function startTestimonialAutoplay() {
-                    testimonialAutoplayInterval = setInterval(nextTestimonialSlide, 3000);
-                }
-                
-                function resetTestimonialAutoplay() {
-                    clearInterval(testimonialAutoplayInterval);
-                    startTestimonialAutoplay();
-                }
-                
-                testimonialsWindow.addEventListener('mouseenter', () => clearInterval(testimonialAutoplayInterval));
-                testimonialsWindow.addEventListener('mouseleave', () => startTestimonialAutoplay());
-                
-                startTestimonialAutoplay();
-                
-                window.addEventListener('resize', () => {
-                    goToTestimonialIndex(currentTestimonialIndex, false);
+                startInterval();
+            }
+            // Pricing Toggle Logic
+            const toggleBtns = document.querySelectorAll('.toggle-btn');
+            const togglePill = document.querySelector('.toggle-pill');
+            const priceValues = document.querySelectorAll('.price-value');
+            const pricePeriods = document.querySelectorAll('.price-period');
+            const featureTexts = document.querySelectorAll('.feature-text');
+
+            if(toggleBtns.length > 0) {
+                toggleBtns.forEach((btn, index) => {
+                    btn.addEventListener('click', () => {
+                        // Update active button
+                        toggleBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Move pill
+                        togglePill.style.transform = `translateX(${index * 100}%)`;
+
+                        // Update content
+                        const period = btn.dataset.period;
+                        
+                        priceValues.forEach(el => {
+                            if(el.dataset[period]) el.textContent = el.dataset[period];
+                        });
+                        
+                        pricePeriods.forEach(el => {
+                            if(el.dataset[period]) el.textContent = el.dataset[period];
+                        });
+                        
+                        featureTexts.forEach(el => {
+                            if(el.dataset[period]) el.textContent = el.dataset[period];
+                        });
+                    });
                 });
             }
 
+            // =============================================
+            // Animação de entrada letra por letra nos textos azuis
+            // =============================================
+            function animateBlueText(el) {
+                if (el.dataset.animated) return;
+                el.dataset.animated = '1';
+
+                const original = el.textContent.replace(/\u00a0/g, ' ');
+                el.innerHTML = '';
+
+                [...original].forEach((char, i) => {
+                    if (char === ' ') {
+                        el.appendChild(document.createTextNode(' '));
+                    } else {
+                        const span = document.createElement('span');
+                        span.className = 'anim-char';
+                        span.style.animationDelay = `${i * 0.05}s`;
+                        span.textContent = char;
+                        el.appendChild(span);
+                    }
+                });
+            }
+
+            const blueSelectors = [
+                '.text-gradient',
+                '.pricing-title-accent',
+                '.faq-title-accent'
+            ];
+
+            const blueEls = document.querySelectorAll(blueSelectors.join(','));
+
+            const blueObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateBlueText(entry.target);
+                        blueObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            blueEls.forEach(el => blueObserver.observe(el));
+            // =============================================
+            // ScrollSpy para navegação ativa
+            // =============================================
+            const sections = document.querySelectorAll('section[id], header[id]');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+            const spyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        // Remover classe ativa de todos
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            // Se o href contiver o id da sessão atual, adiciona active
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, {
+                rootMargin: '-30% 0px -70% 0px' // Ajuste para ativar quando a seção chegar a 30% do topo da tela
+            });
+
+            sections.forEach(sec => spyObserver.observe(sec));
+
         });
     </script>
+    
+    <!-- Floating WhatsApp Button (Mobile Only) -->
+    <a href="https://wa.me/558195795962?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20personalizados%20do%20Vitalyze." target="_blank" class="floating-whatsapp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
 </body>
 </html>
