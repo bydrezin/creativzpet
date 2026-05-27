@@ -10,6 +10,8 @@
     --teal-hover: #009bdb;
     --teal-light: #e6f7ff;
     --teal-glow: rgba(0, 174, 239, 0.15);
+    --lime: #a3ff33;
+    --lime-hover: #8be022;
     --bg-light: #ffffff;
     --bg-page: #f3f7f8;
     --text-dark: #0f172a;
@@ -689,79 +691,90 @@ button {
     margin-bottom: 24px;
 }
 
-.path-grid {
+/* === New Path Split Layout === */
+.path-split {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 2fr;
-    gap: 16px;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 24px;
     align-items: stretch;
 }
 
-/* Small Cards Styling */
-.program-card {
-    background-color: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
+/* Left column: stacked thin cards */
+.path-cards-col {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-    border: 1px solid rgba(0, 174, 239, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 10px;
 }
 
-.program-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+.path-row-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px 22px;
+    flex: 1;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.program-img-wrapper {
-    height: 160px;
+.path-row-card:hover {
+    border-color: var(--lime);
+    background: #161616;
+}
+
+.path-card-number {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--lime);
+    line-height: 1;
+    min-width: 36px;
+    letter-spacing: -0.03em;
+    padding-top: 2px;
+}
+
+.path-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.path-card-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.path-card-desc {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Right column: tall image */
+.path-img-col {
+    border-radius: 20px;
     overflow: hidden;
-    background-color: #f1f5f9;
+    height: 100%;
+    min-height: 460px;
 }
 
-.program-img {
+.path-side-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.program-card:hover .program-img {
-    transform: scale(1.05);
-}
-
-.program-info {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.program-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-}
-
-.program-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.4;
-    margin-bottom: 16px;
-    flex: 1;
-}
-
-.program-footer {
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    border-top: 1px solid #f1f5f9;
-    padding-top: 10px;
+    display: block;
 }
 
 /* Large Video Card Styling */
 .video-card {
+    grid-column: span 4;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -770,7 +783,7 @@ button {
     flex-direction: column;
     justify-content: flex-end;
     padding: 32px;
-    min-height: 320px;
+    min-height: 260px;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
 }
 
@@ -1123,8 +1136,11 @@ button {
         transform: translateY(-50%);
     }
     
-    .path-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .path-split {
+        grid-template-columns: 1fr;
+    }
+    .path-img-col {
+        min-height: 320px;
     }
     
     .video-card {
@@ -1179,8 +1195,11 @@ button {
         font-size: 4rem;
     }
     
-    .path-grid {
+    .path-split {
         grid-template-columns: 1fr;
+    }
+    .path-img-col {
+        min-height: 260px;
     }
     
     .video-card {
@@ -1460,7 +1479,7 @@ button {
 }
 
 /* ==========================================
-   Testimonials Section (Google My Business Infinite Scroll Marquee)
+   Testimonials Section (Two-Column Layout with Marquee)
    ========================================== */
 .testimonials-section {
     padding: 100px 0;
@@ -1469,175 +1488,290 @@ button {
     overflow: hidden;
 }
 
+/* Background Blobs for Testimonials Section */
+.testimonials-bg-blob-right {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 50%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(0, 174, 239, 0.1) 0%, rgba(243, 247, 248, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.testimonials-bg-blob-left {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 40%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(0, 174, 239, 0.06) 0%, rgba(243, 247, 248, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
 .testimonials-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    position: relative;
+    z-index: 2;
 }
 
-.testimonials-header {
-    text-align: center;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Two-column layout */
+.testimonials-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
 }
 
-/* Google My Business Badge - Sleek Light Style */
-.gmb-badge {
-    background-color: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 8px 16px;
-    border-radius: 9999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #0f172a;
-}
-
-.gmb-logo {
-    display: block;
-    flex-shrink: 0;
-}
-
-.gmb-badge-text {
-    border-right: 1px solid rgba(0, 0, 0, 0.08);
-    padding-right: 10px;
-    color: #475569;
-}
-
-.gmb-badge-stars {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.gmb-score {
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.stars-mini {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-
-.testimonials-title {
+/* Titles for both columns - Styled exactly like the reference image */
+.testimonials-column-title {
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 2.8rem;
-    letter-spacing: -0.01em;
-    color: #0f172a; /* Dark title for high contrast on white */
-    margin-bottom: 16px;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
     text-transform: uppercase;
 }
 
-.testimonials-subtitle {
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    color: #475569; /* Dark gray for excellent readability */
-    max-width: 600px;
-    line-height: 1.5;
+/* Left Column: Rating Summary Card */
+.testimonials-left-column {
+    position: sticky;
+    top: 100px;
+    background-color: transparent;
+    z-index: 10;
+    padding-right: 10px;
 }
 
-/* Marquee infinite scroll track styling */
-.testimonials-marquee-wrapper {
+.rating-summary-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduced gap to fit Write Review stack elegantly */
+}
+
+.rating-header-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rating-score-big {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+}
+
+.rating-score-stars-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rating-stars-gold {
+    display: flex;
+    gap: 2px;
+}
+
+.rating-stars-gold svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffb800;
+}
+
+.rating-count-text {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Progress bars list */
+.rating-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rating-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rating-bar-num {
+    width: 12px;
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 600;
+    text-align: center;
+}
+
+.rating-bar-track {
+    flex: 1;
+    height: 8px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
     overflow: hidden;
-    width: 100%;
-    display: flex;
-    position: relative;
-    padding: 20px 0;
 }
 
-/* Left & Right fade indicators mimicking premium slider look - White background */
-.testimonials-marquee-wrapper::before,
-.testimonials-marquee-wrapper::after {
-    content: "";
+.rating-bar-fill {
     height: 100%;
-    width: 150px;
-    position: absolute;
-    z-index: 2;
-    pointer-events: none;
+    background-color: var(--teal);
+    border-radius: 9999px;
 }
 
-.testimonials-marquee-wrapper::before {
-    left: 0;
-    top: 0;
-    background: linear-gradient(to right, var(--bg-page), transparent);
+.rating-bar-percent {
+    width: 35px;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+    text-align: right;
 }
 
-.testimonials-marquee-wrapper::after {
-    right: 0;
-    top: 0;
-    background: linear-gradient(to left, var(--bg-page), transparent);
-}
-
-.testimonials-marquee-track {
+/* Write Review Helper section styles */
+.rating-write-review-info {
     display: flex;
-    width: max-content;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 16px;
 }
 
-.testimonials-marquee-group {
-    display: flex;
+.rating-write-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: var(--font-body);
+}
+
+.rating-write-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Google Write Review Button */
+.google-write-review-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+    width: 100%; /* Full card width to match submit button in reference image */
+}
+
+.google-write-review-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #d2d4d7;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.google-btn-g-logo {
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-    gap: 8px;
-    padding: 10px 12px;
-    min-width: max-content;
-    animation: marquee-scroll 180s linear infinite; /* Premium ultra-slow motion speed */
 }
 
-/* Pause on hover to let the user read comfortably */
-.testimonials-marquee-wrapper:hover .testimonials-marquee-group {
-    animation-play-state: paused;
+/* Right Column: Scrolling Testimonials */
+.testimonials-right-column {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
 }
 
-/* Seamless infinite scroll translate keyframes using translate3d for GPU acceleration */
-@keyframes marquee-scroll {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+/* Testimonials Slider Layout */
+.testimonials-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    width: 100%;
 }
 
-/* Card Styling - Sleek black brand style */
+.testimonials-vertical-window {
+    flex: 1;
+    height: 500px; /* Aligns with the height of the left card */
+    overflow: hidden;
+    position: relative;
+    padding: 4px 0; /* Prevents shadow clipping */
+    /* Vertical Mask: Smooth fade-out at the top and bottom boundaries */
+    mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.testimonials-vertical-track {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    will-change: transform;
+    /* transition: transform handled dynamically in JS */
+}
+
+/* Testimonial card style - Clean layout styled like image_4 */
 .testimonial-card {
-    background-color: #000000; /* Pure black card as requested */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 10px;
-    width: 165px;
-    flex-shrink: 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial-card-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
-    margin-bottom: 6px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.testimonial-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .testimonial-avatar {
-    width: 26px;
-    height: 26px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    border: 2px solid #f1f5f9;
 }
 
 .testimonial-user-info {
@@ -1646,59 +1780,98 @@ button {
 }
 
 .testimonial-name {
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: #ffffff; /* Pure white text for names */
+    color: #0f172a;
     line-height: 1.2;
-    margin-bottom: 0px;
 }
 
-.testimonial-meta {
+.testimonial-role {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.testimonial-rating-source {
     display: flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 0.58rem;
-    color: #94a3b8; /* Muted gray-blue */
-}
-
-.bullet {
-    color: rgba(255, 255, 255, 0.2);
-}
-
-.testimonial-gmb-logo {
-    display: block;
-    object-fit: contain;
-    flex-shrink: 0;
-    width: 8px;
-    height: 8px;
-}
-
-.star-icon {
-    width: 8px !important;
-    height: 8px !important;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
 }
 
 .testimonial-stars-svg {
-    margin-bottom: 4px !important;
+    display: flex;
+    gap: 2px;
 }
 
-.testimonial-stars {
-    font-size: 1rem;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
-    color: #ffb800; /* Golden yellow stars */
+.testimonial-stars-svg svg {
+    width: 14px;
+    height: 14px;
+    fill: #ffb800;
+}
+
+.testimonial-google-logo {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
 }
 
 .testimonial-text {
-    font-size: 0.65rem;
-    line-height: 1.3;
-    color: #f1f5f9; /* Pure/clear off-white text for excellent dark readability */
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #475569;
     font-weight: 400;
 }
 
+/* Dots navigation layout */
+.testimonials-dots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    flex-shrink: 0;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0;
+}
+
+.slider-dot:hover {
+    background-color: #94a3b8;
+    transform: scale(1.25);
+}
+
+.slider-dot.active {
+    background-color: var(--teal);
+    transform: scale(1.35);
+}
+
+/* ==========================================
+   Testimonials Responsive Breakpoints
+   ========================================== */
 @media (max-width: 992px) {
-    .testimonials-title {
-        font-size: 2.3rem;
+    .testimonials-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .testimonials-left-column {
+        position: static;
+        padding-right: 0;
+    }
+    
+    .testimonials-vertical-window {
+        height: 480px;
     }
 }
 
@@ -1706,27 +1879,386 @@ button {
     .testimonials-section {
         padding: 60px 0;
     }
-    .testimonials-title {
+    
+    .testimonials-column-title {
         font-size: 1.8rem;
     }
-    .testimonials-subtitle {
-        font-size: 0.98rem;
+    
+    .testimonial-card {
+        padding: 20px;
     }
-    .testimonials-marquee-wrapper::before,
-    .testimonials-marquee-wrapper::after {
-        width: 60px; /* Narrower fade bands on mobile */
+    
+    .rating-summary-card {
+        padding: 24px 16px;
     }
-    .gmb-badge {
-        flex-direction: column;
-        border-radius: 16px;
-        gap: 6px;
-        padding: 10px 16px;
+    
+    .testimonials-slider-container {
+        gap: 12px;
     }
-    .gmb-badge-text {
-        border-right: none;
-        padding-right: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        padding-bottom: 6px;
+}
+
+/* ==========================================
+   1. Coach Section Styles (Treinador)
+   ========================================== */
+.coach-section {
+    padding: 100px 0;
+    background-color: var(--bg-page);
+    position: relative;
+    overflow: hidden;
+}
+
+.coach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.coach-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Left Profile Card */
+.coach-profile-card {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+.coach-card-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.coach-card-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.coach-badge-logo {
+    color: var(--text-dark);
+}
+
+.coach-card-info {
+    position: absolute;
+    bottom: 96px;
+    left: 28px;
+    z-index: 2;
+}
+
+.coach-card-name {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.coach-card-role {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--lime);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats overlay bar */
+.coach-card-stats {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    display: flex;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.coach-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.coach-stat-value {
+    font-family: var(--font-heading);
+    font-weight: 850;
+    font-size: 1.6rem;
+    color: var(--white);
+    line-height: 1;
+}
+
+.coach-stat-label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    color: var(--text-light-muted);
+    font-weight: 500;
+}
+
+.coach-stat-divider {
+    width: 1px;
+    height: 28px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Shadow gradient overlay behind text */
+.coach-profile-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0) 100%);
+    z-index: 1;
+}
+
+/* Coach Right Column */
+.coach-tag {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.coach-title {
+    font-family: var(--font-heading);
+    font-weight: 850;
+    font-size: 3.2rem;
+    line-height: 1.05;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+}
+
+.coach-desc {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 28px;
+}
+
+.coach-badges-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.coach-badge-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    color: var(--text-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+}
+
+/* Coach widgets grid */
+.coach-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.coach-ai-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+    min-height: 160px;
+}
+
+.coach-ai-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.coach-ai-desc {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.coach-ai-arrow-btn {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--lime);
+    color: #000000;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+.coach-ai-arrow-btn:hover {
+    transform: translateY(-2px);
+    background-color: var(--lime-hover);
+}
+
+/* Training Widget */
+.coach-progress-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coach-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.coach-progress-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.coach-progress-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--teal);
+    display: inline-block;
+}
+
+.coach-progress-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    text-transform: uppercase;
+}
+
+.coach-progress-kcal {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--text-dark);
+    padding: 4px 10px;
+    border-radius: 9999px;
+}
+
+.coach-progress-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.coach-progress-stats-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+}
+
+.coach-progress-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.coach-progress-val {
+    font-family: var(--font-heading);
+    font-weight: 850;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.coach-progress-lbl {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+
+
+
+
+/* ==========================================
+   Responsive Breakpoints for Coach Section
+   ========================================== */
+@media (max-width: 992px) {
+    .coach-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .coach-title {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .coach-section {
+        padding: 60px 0;
+    }
+    
+    .coach-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coach-title {
+        font-size: 2.2rem;
+    }
+    
+    .coach-card-img {
+        height: 420px;
     }
 }
 
