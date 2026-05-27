@@ -1239,4 +1239,199 @@ button {
     }
 }
 
+/* ==========================================
+   FAQ Section Styles (Pill Accordion UX)
+   ========================================== */
+.faq-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    position: relative;
+    border-bottom: 1px solid rgba(0, 174, 239, 0.05);
+}
+
+.faq-container {
+    max-width: 800px; /* max-w-3xl equivalent (~768px-800px) */
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.faq-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative underline for FAQ section to match path section */
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--teal);
+    margin: 12px auto 0 auto;
+}
+
+.faq-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Vertical list with small spacing (gap) */
+.faq-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* small gap between each question */
+}
+
+/* Style of the CLOSED Item */
+.faq-item {
+    background-color: #f4f5f7; /* Tom muito claro de cinza/azul */
+    border-radius: 9999px; /* Bordas totalmente arredondadas "pílula" */
+    border: 1px solid transparent;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+    overflow: hidden;
+}
+
+/* Style of the OPEN Item (Active) */
+.faq-item.active {
+    background-color: var(--white); /* Muda para fundo BRANCO */
+    border-radius: 24px; /* O border-radius deixa de ser pílula e passa a ser card arredondado normal */
+    border-color: rgba(0, 174, 239, 0.12); /* Borda muito sutil e clara */
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04); /* Sombra extremamente leve */
+}
+
+/* Closed state button spacing and flexbox layout */
+.faq-question-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Separar a pergunta do ícone */
+    align-items: center;
+    padding: 16px 28px; /* Padding generoso */
+    text-align: left;
+    gap: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.faq-question-text {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.faq-item:hover .faq-question-text,
+.faq-item.active .faq-question-text {
+    color: var(--teal);
+}
+
+/* Style of the Icon (Botão de abrir/fechar) */
+.faq-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* Círculo perfeito */
+    background-color: var(--white); /* Fundo BRANCO */
+    color: var(--text-dark); /* Ícone escuro, fino e minimalista */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.3s ease, 
+                color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item:hover .faq-icon-wrapper {
+    background-color: var(--teal-light);
+    color: var(--teal);
+}
+
+/* When active (open), rotate the + icon to x and transition styles */
+.faq-item.active .faq-icon-wrapper {
+    transform: rotate(45deg); /* Rotação suave de + para x */
+    background-color: var(--teal);
+    color: var(--white);
+}
+
+/* Response panel and transitions */
+.faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Abertura suave */
+}
+
+.faq-answer-content {
+    padding: 0 28px 24px 28px; /* Padding de resposta */
+}
+
+/* Texto da Resposta */
+.faq-answer-content p {
+    font-size: 0.92rem; /* Fonte um pouco menor que a da pergunta */
+    color: var(--text-muted); /* Cor cinza escuro/médio */
+    line-height: 1.6;
+}
+
+.faq-answer-content p:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.faq-highlight-note {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* FAQ Responsive Styles */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+    
+    .faq-title {
+        font-size: 2rem;
+    }
+    
+    .faq-question-btn {
+        padding: 16px 20px;
+    }
+    
+    .faq-question-text {
+        font-size: 0.98rem;
+    }
+    
+    .faq-answer-content {
+        padding: 0 20px 20px 20px;
+    }
+}
+
 
