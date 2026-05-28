@@ -1847,7 +1847,7 @@ button {
     }
     
     .hero-title {
-        font-size: 4.2rem;
+        font-size: 4.8rem;
     }
     
     .path-split {
@@ -1918,7 +1918,7 @@ button {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 3.6rem;
+        font-size: 4.0rem;
     }
     
     .progress-card {
@@ -2951,7 +2951,7 @@ button {
     }
 
     .hero-title {
-        font-size: 4.2rem !important;
+        font-size: 4.8rem !important;
         text-align: center !important;
         line-height: 1.15 !important;
         width: 100% !important;
@@ -3091,7 +3091,7 @@ button {
 @media (max-width: 480px) {
     /* Extra typography & elements scaling for small viewports */
     .hero-title {
-        font-size: 3.6rem !important;
+        font-size: 4.0rem !important;
     }
     
     .hero-subtitle {
