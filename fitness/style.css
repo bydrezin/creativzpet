@@ -220,10 +220,15 @@ button {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 24px 20px;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.scrolled .header-container {
+    padding: 10px 24px;
 }
 
 /* Logo styling */
@@ -276,10 +281,15 @@ button {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 24px 20px;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.scrolled .header-container {
+    padding: 10px 24px;
 }
 
 /* Logo styling */
