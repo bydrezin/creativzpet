@@ -381,6 +381,7 @@ button {
     gap: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    will-change: transform;
 }
 
 .btn-trial:hover {
@@ -493,7 +494,8 @@ button {
     border-radius: 50%;
     z-index: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0);
+    will-change: transform, opacity;
 }
 
 .blob-right {
@@ -561,6 +563,7 @@ button {
     opacity: 0;
     transform-origin: center;
     animation: flipHorizontal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    will-change: transform, opacity;
 }
 
 @keyframes flipHorizontal {
@@ -613,6 +616,7 @@ button {
     font-size: 0.95rem;
     box-shadow: 0 10px 25px rgba(11, 19, 26, 0.15);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .wpp-circle {
@@ -626,6 +630,7 @@ button {
     color: var(--white);
     transition: transform 0.3s ease, background-color 0.3s ease;
     animation: pulse-wpp 2s infinite;
+    will-change: transform, box-shadow;
 }
 
 @keyframes pulse-wpp {
@@ -671,6 +676,7 @@ button {
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .avatar-img:hover {
@@ -775,6 +781,7 @@ button {
     stroke: var(--teal);
     stroke-linecap: round;
     transition: stroke-dashoffset 1s ease;
+    will-change: stroke-dashoffset;
 }
 
 .progress-value {
@@ -858,6 +865,8 @@ button {
    ========================================== */
 .path-section {
     padding: 80px 0;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
 }
 
 .path-container {
@@ -913,6 +922,7 @@ button {
     padding: 10px 16px;
     flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .path-row-card::after {
@@ -1229,6 +1239,8 @@ button {
     border-radius: 0;
     position: relative;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 800px;
 }
 
 .pricing-section::before {
@@ -1358,6 +1370,7 @@ button {
     flex-direction: column;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .pricing-card-highlight {
@@ -2146,6 +2159,8 @@ button {
 .testimonials-section {
     padding: 100px 24px;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 700px;
 }
 
 .testimonials-container {
@@ -2185,8 +2200,9 @@ button {
     gap: 32px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hide scrollbar */
-    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    will-change: scroll-position;
 }
 
 .testimonials-carousel::-webkit-scrollbar {
@@ -2385,6 +2401,8 @@ button {
 .coach-section {
     padding: 100px 0;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 650px;
 }
 
 .coach-container {

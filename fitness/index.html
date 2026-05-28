@@ -3,16 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#f3f7f8">
     <title>Creativzlab® | Demonstração Fitness</title>
     <link rel="icon" type="image/webp" href="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779739308/Icon-Creativzlab-_For-DarkBG__1_zsvjqh.webp">
     <meta name="description" content="Treino personalizado. Nutrição mais inteligente. Resultados reais que duram. Junte-se à Vitalyze para começar sua jornada hoje.">
-    <!-- Google Fonts -->
+
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779828916/Personal-Femea_mhztgo.webp" fetchpriority="high">
+
+    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap" rel="stylesheet">
-    
-    <!-- CSS File -->
-    <link rel="stylesheet" href="./style.css?v=2026.05.27.v4">
+
+    <!-- Google Font: async (non-blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap"></noscript>
+
+    <!-- Critical CSS inline (above-the-fold) -->
+    <style>
+        :root{--dark-bg:#060b0f;--dark-card:#0b131a;--teal:#00AEEF;--teal-hover:#009bdb;--teal-light:#e6f7ff;--teal-glow:rgba(0,174,239,.15);--lime:#a3ff33;--bg-light:#fff;--bg-page:#f3f7f8;--text-dark:#0f172a;--text-muted:#64748b;--text-light-muted:#94a3b8;--white:#fff;--font-heading:'Google Sans Flex',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--font-body:'Google Sans Flex',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--text-hero:clamp(3rem,6vw,5rem);--text-hero-sub:clamp(2rem,4.5vw,3.5rem);--text-h2:clamp(1.75rem,2.8vw,2.25rem);--text-body-lg:1.125rem;--text-body:1rem;--text-body-sm:.875rem}
+        *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:var(--font-body);font-weight:400;background-color:var(--bg-page);color:var(--text-dark);overflow-x:hidden;line-height:1.5}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit}
+        li{list-style:none}
+        button{background:none;border:none;cursor:pointer;font-family:inherit;outline:none}
+        .header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:1px solid transparent;transition:background-color .3s ease,backdrop-filter .3s ease,border-bottom .3s ease,box-shadow .3s ease}
+        .header.scrolled{background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 10px 30px -10px rgba(0,0,0,.1)}
+        .header-container{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+        .logo{display:flex;align-items:center;gap:8px}
+        .nav{display:flex;align-items:center}
+        .nav-list{display:flex;gap:36px}
+        .nav-link{font-family:var(--font-body);font-weight:500;font-size:var(--text-body);color:var(--text-muted);position:relative;padding:4px 0;transition:color .3s ease}
+        .header-actions{display:flex;align-items:center;gap:16px}
+        .mobile-menu-toggle{display:none;color:var(--text-dark);padding:4px;transition:transform .3s ease}
+        .hero{position:relative;padding:140px 0 200px 0}
+        .hero-container{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:stretch;position:relative}
+        .hero-content{display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:10;padding-bottom:80px}
+        .hero-title{font-family:var(--font-heading);font-weight:450;font-size:var(--text-hero);line-height:1.1;letter-spacing:-.02em;color:var(--text-dark);margin-bottom:24px}
+        .text-gradient{color:var(--teal);background:linear-gradient(135deg,var(--teal) 0%,#70d6ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-subtitle{font-size:1.15rem;color:var(--text-muted);line-height:1.6;margin-bottom:36px;font-weight:400}
+        .btn-trial{display:inline-flex;align-items:center;background-color:var(--teal);color:var(--white);font-family:var(--font-body);font-weight:600;font-size:var(--text-body-sm);padding:6px 6px 6px 20px;border-radius:9999px;border:none;gap:12px;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;will-change:transform}
+        .btn-trial-circle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background-color:var(--white);color:var(--teal);transition:transform .3s ease}
+    </style>
+
+    <!-- Main stylesheet: async load -->
+    <link rel="preload" href="./style.css?v=2026.05.28.v1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./style.css?v=2026.05.28.v1"></noscript>
 </head>
 <body>
 
@@ -20,7 +58,7 @@
     <header class="header">
         <div class="header-container">
             <a href="#" class="logo" id="header-logo">
-                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779170697/Logo-_-Icon-Creativzlab-_For-LigthBG__zl2sl6.webp" alt="Logo" class="logo-image" style="height: 24px; width: auto; object-fit: contain;">
+                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779170697/Logo-_-Icon-Creativzlab-_For-LigthBG__zl2sl6.webp" alt="Logo" class="logo-image" width="120" height="24" decoding="async" fetchpriority="high" style="height: 24px; width: auto; object-fit: contain;">
             </a>
             
             <nav class="nav" id="main-nav">
@@ -99,10 +137,10 @@
                     
                     <div class="hero-social-proof">
                         <div class="avatar-stack">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 1" class="avatar-img">
-                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 2" class="avatar-img">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 3" class="avatar-img">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 4" class="avatar-img">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 1" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 2" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 3" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 4" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
                         </div>
                         <p class="social-proof-text">
                             Junte-se a <strong>+100 alunos</strong><br>
@@ -113,7 +151,7 @@
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779828916/Personal-Femea_mhztgo.webp" alt="Atleta fitness" class="hero-main-image">
+                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779828916/Personal-Femea_mhztgo.webp" alt="Atleta fitness" class="hero-main-image" width="480" height="700" fetchpriority="high" decoding="async">
                 
                 <!-- Today's Progress Card -->
                 <div class="progress-card" id="progress-card">
@@ -299,7 +337,7 @@
 
                 <!-- Right: Large image -->
                 <div class="path-img-col">
-                    <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779893797/letsgo_b4l9ym.webp" alt="Consultoria Fitness" class="path-side-img">
+                    <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779893797/letsgo_b4l9ym.webp" alt="Consultoria Fitness" class="path-side-img" width="500" height="600" loading="lazy" decoding="async" fetchpriority="low">
                 </div>
             </div>
         </div>
@@ -314,7 +352,7 @@
                 <!-- Left Column (Alex Simon Card) -->
                 <div class="coach-left-col">
                     <div class="coach-profile-card">
-                        <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779854489/Gemini_Generated_Image_gej3tlgej3tlgej3_epu3nt.webp" alt="Luiza Personal Trainer" class="coach-card-img">
+                        <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779854489/Gemini_Generated_Image_gej3tlgej3tlgej3_epu3nt.webp" alt="Luiza Personal Trainer" class="coach-card-img" width="480" height="600" loading="lazy" decoding="async" fetchpriority="low">
                         
                         <div class="coach-play-btn-glass">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -376,7 +414,7 @@
                         <div class="testimonial-new-content">
                             <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
                                 <div style="display: flex; gap: 16px; align-items: center;">
-                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" width="44" height="44" loading="lazy" decoding="async" fetchpriority="low" style="width: 44px; height: 44px;">
                                     <div style="display: flex; flex-direction: column; gap: 6px;">
                                         <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Felipe Silva</h3>
                                         <div class="testimonial-new-stars-svg" style="margin: 0;">
@@ -388,7 +426,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" width="24" height="24" loading="lazy" decoding="async" fetchpriority="low" style="margin-left: 0; width: 24px; height: 24px;">
                             </div>
                             <p class="testimonial-new-text">"Caramba, o PT me transformou completamente! Eu era só pele e osso e agora tenho músculo de verdade. Ele me deu todo o suporte que eu precisava. Valeu muito a pena!"</p>
                             <div class="testimonial-decoration"></div>
@@ -403,7 +441,7 @@
                         <div class="testimonial-new-content">
                             <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
                                 <div style="display: flex; gap: 16px; align-items: center;">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" width="44" height="44" loading="lazy" decoding="async" fetchpriority="low" style="width: 44px; height: 44px;">
                                     <div style="display: flex; flex-direction: column; gap: 6px;">
                                         <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Larissa Costa</h3>
                                         <div class="testimonial-new-stars-svg" style="margin: 0;">
@@ -415,7 +453,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" width="24" height="24" loading="lazy" decoding="async" fetchpriority="low" style="margin-left: 0; width: 24px; height: 24px;">
                             </div>
                             <p class="testimonial-new-text">"Não tenho palavras para agradecer ao meu PT. Consegui definir meu abdômen e ganhar massa de forma saudável. Sinto-me muito mais forte e segura. Recomendo de olhos fechados!"</p>
                             <div class="testimonial-decoration"></div>
@@ -430,7 +468,7 @@
                         <div class="testimonial-new-content">
                             <div class="testimonial-new-header" style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; margin-bottom: 24px;">
                                 <div style="display: flex; gap: 16px; align-items: center;">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" style="width: 44px; height: 44px;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&q=80" class="testimonial-new-avatar" alt="Avatar" width="44" height="44" loading="lazy" decoding="async" fetchpriority="low" style="width: 44px; height: 44px;">
                                     <div style="display: flex; flex-direction: column; gap: 6px;">
                                         <h3 class="testimonial-new-name" style="margin: 0; line-height: 1;">Marcos Pereira</h3>
                                         <div class="testimonial-new-stars-svg" style="margin: 0;">
@@ -442,7 +480,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" style="margin-left: 0; width: 24px; height: 24px;">
+                                <img src="https://res.cloudinary.com/do789aovx/image/upload/q_auto/f_auto/v1779847651/google-icon-logo-svgrepo-com_xejhpl.svg" class="testimonial-new-google" alt="Google" width="24" height="24" loading="lazy" decoding="async" fetchpriority="low" style="margin-left: 0; width: 24px; height: 24px;">
                             </div>
                             <p class="testimonial-new-text">"Achava que depois dos 30 não dava mais, mas com o acompanhamento certo do personal, tudo mudou. Os treinos foram duros, mas o resultado fala por si só. Melhor investimento!"</p>
                             <div class="testimonial-decoration"></div>
