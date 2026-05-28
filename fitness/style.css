@@ -220,7 +220,7 @@ button {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16px 24px;
+    padding: 26px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -228,7 +228,7 @@ button {
 }
 
 .header.scrolled .header-container {
-    padding: 10px 24px;
+    padding: 16px 24px;
 }
 
 /* Logo styling */
@@ -281,7 +281,7 @@ button {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16px 24px;
+    padding: 26px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -289,7 +289,7 @@ button {
 }
 
 .header.scrolled .header-container {
-    padding: 10px 24px;
+    padding: 16px 24px;
 }
 
 /* Logo styling */
