@@ -1845,16 +1845,8 @@ button {
     .testimonial-new-name, .footer-desc, .footer-title {
         text-align: center !important;
     }
-    .nav {
-        display: none;
-    }
-    
-    .header .btn-journey {
-        display: none; /* hidden in desktop header on mobile, shown in drawer */
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
+    .header {
+        display: none !important;
     }
     
     .hero {
