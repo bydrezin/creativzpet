@@ -693,15 +693,15 @@ button {
 }
 
 .hero-main-image {
-    height: 115%;
-    max-height: 700px;
+    height: 122%;
+    max-height: 750px;
     width: auto;
     object-fit: contain;
     position: relative;
     z-index: 2;
     margin: 0;
     margin-top: -40px;
-    margin-bottom: -70px;
+    margin-bottom: -115px;
     margin-left: -630px;
     display: block;
 }
