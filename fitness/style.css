@@ -2835,9 +2835,7 @@ button {
         left: 10%;
     }
 
-    /* Improve typography scaling and prevent word-breaking */
-    h1, h2, h3, h4, h5, h6,
-    .hero-title,
+    /* Improve typography scaling */
     .path-title,
     .testimonials-main-title,
     .faq-title,
@@ -2845,12 +2843,7 @@ button {
     .pricing-title,
     .coach-title,
     .footer-cta-title {
-        font-size: clamp(1.8rem, 6vw, 2.2rem) !important;
-        line-height: 1.2 !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-        hyphens: none !important;
-        -webkit-hyphens: none !important;
+        font-size: 2.2rem !important;
     }
 
     /* Safe container boundaries for mobile */
@@ -2973,15 +2966,11 @@ button {
     }
 
     .hero-title {
-        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+        font-size: 2.8rem !important;
         text-align: center !important;
         line-height: 1.15 !important;
         width: 100% !important;
         margin-bottom: 16px !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-        hyphens: none !important;
-        -webkit-hyphens: none !important;
     }
 
     .hero-subtitle {
@@ -3113,11 +3102,7 @@ button {
 @media (max-width: 480px) {
     /* Extra typography & elements scaling for small viewports */
     .hero-title {
-        font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-        hyphens: none !important;
-        -webkit-hyphens: none !important;
+        font-size: 2.2rem !important;
     }
     
     .hero-subtitle {
@@ -3242,5 +3227,232 @@ button {
     }
     .floating-whatsapp {
         display: none !important;
+    }
+}
+
+/* ==========================================
+   Mobile Centered Optimization (Requested by User)
+   ========================================== */
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Adjust the header to stay centered within the 480px max-width */
+    .header {
+        max-width: 480px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 0 auto !important;
+        padding: 12px 0 !important;
+    }
+
+    .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-actions {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    /* Uniform relative widths and padding for all sections */
+    section {
+        width: 100% !important;
+        padding: 40px 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-container,
+    .results-container,
+    .path-container,
+    .coach-container,
+    .testimonials-container,
+    .pricing-outer-container {
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Fix awkward text breaks by adjusting font-size and line-height */
+    .hero-title, .results-title, .path-title, .coach-title, .testimonials-main-title, h1, h2, h3, h4, h5, h6 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+
+    .pricing-title {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+
+    .hero-subtitle, .coach-desc, .testimonial-new-text, .pricing-subtitle, p, .social-proof-text {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: normal !important;
+    }
+
+    /* Moved path-card styles to 768px block below */
+
+    /* Ensure specific hero layout aligns centered */
+    .hero-content {
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 20px !important;
+    }
+
+    .hero-social-proof {
+        justify-content: center !important;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-trial {
+        margin: 0 auto;
+    }
+
+    /* Ensure Larissa Costa testimonial card matches width */
+    .testimonial-new-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Results stats */
+    .results-stats-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+    .stat-col {
+        align-items: center !important;
+    }
+
+    /* Coach card center */
+    .coach-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+    }
+
+    /* Path section split center */
+    .path-split {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+    }
+    
+    /* Moved path-row-card styles to 768px block below */
+
+    /* Testimonials Horizontal Scroll adjustment */
+    .testimonials-carousel {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        overflow-x: hidden !important;
+    }
+    .testimonials-dots {
+        display: none !important;
+    }
+}
+
+/* ==========================================
+   Consultoria Cards Layout (max-width: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .path-row-card {
+        width: 95% !important;
+        margin: 0 auto 15px auto !important;
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .path-card-number {
+        min-width: 50px !important;
+        flex-shrink: 0 !important;
+        margin-right: 15px !important;
+    }
+
+    .path-card-text {
+        flex-grow: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: left !important;
+    }
+
+    .path-card-title {
+        display: none !important;
+    }
+
+    .path-card-desc {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        margin-top: 8px !important;
+    }
+
+    .testimonial-new-card {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .testimonial-new-name {
+        font-size: 1.1rem !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+    }
+
+    .anim-char {
+        display: inline !important;
+        word-break: normal !important;
+        white-space: normal !important;
+    }
+
+    .pricing-title-accent {
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
     }
 }

@@ -60,7 +60,7 @@
     </style>
 
     <!-- Main stylesheet: synchronous -->
-    <link rel="stylesheet" href="https://demonstracao.creativzlab.com/fitness/style.css?v=2026.05.28.v1">
+    <link rel="stylesheet" href="https://demonstracao.creativzlab.com/fitness/style.css?v=2026.05.28.v3">
     
     <!-- Anti-Flicker (FOUC) Script & Style -->
     <style>
@@ -401,7 +401,7 @@
                         <!-- Single info card -->
                         <div class="coach-ai-card coach-dark-card" style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center; padding: 24px; background: #0b131a; border: none; gap: 24px; position: relative; overflow: hidden;">
                             <div class="coach-stat-item" style="display: flex; flex-direction: row; align-items: center; gap: 12px; flex-shrink: 0; position: relative; z-index: 1;">
-                                <span class="coach-stat-value" style="color: #ffffff; font-size: 2.5rem; line-height: 1;">15+</span>
+                                <span class="coach-stat-value" style="color: #ffffff; font-size: 2.5rem; line-height: 1;"><span class="count-up-int" data-target="15">15</span>+</span>
                                 <span class="coach-stat-label" style="color: #94a3b8; text-align: left; max-width: 80px; line-height: 1.2;">Anos de Experiência</span>
                             </div>
                             <div class="coach-stat-divider" style="background: rgba(255, 255, 255, 0.15); width: 1px; height: 50px; flex-shrink: 0; position: relative; z-index: 1;"></div>
@@ -539,7 +539,6 @@
                 <div class="pricing-grid">
                     <!-- Card 1: Bronze -->
                     <div class="pricing-card">
-                        <p class="card-desc">Para iniciantes que querem sair do sedentarismo</p>
                         <h3 class="card-title">Bronze</h3>
                         
                         <div class="card-price-container">
@@ -564,7 +563,6 @@
                     <!-- Card 2: Prata -->
                     <div class="pricing-card pricing-card-highlight">
                         <div class="card-popular-badge">POPULAR</div>
-                        <p class="card-desc">Para quem já treina e quer evoluir em performance</p>
                         <h3 class="card-title">Prata</h3>
                         
                         <div class="card-price-container">
@@ -588,7 +586,6 @@
 
                     <!-- Card 3: Ouro -->
                     <div class="pricing-card">
-                        <p class="card-desc">Para quem deseja priorizar a calistenia e performance</p>
                         <h3 class="card-title">Ouro</h3>
                         
                         <div class="card-price-container">
@@ -1035,7 +1032,13 @@
                         const period = btn.dataset.period;
                         
                         priceValues.forEach(el => {
-                            if(el.dataset[period]) el.textContent = el.dataset[period];
+                            if(el.dataset[period]) {
+                                if (window.animatePrice) {
+                                    window.animatePrice(el, el.dataset[period], 800);
+                                } else {
+                                    el.textContent = el.dataset[period];
+                                }
+                            }
                         });
                         
                         pricePeriods.forEach(el => {
@@ -1117,6 +1120,61 @@
 
             sections.forEach(sec => spyObserver.observe(sec));
 
+            // =============================================
+            // Animação de contagem para números e preços
+            // =============================================
+            window.animatePrice = function(el, targetStr, duration) {
+                let targetNum = parseFloat(targetStr.replace(/\./g, '').replace(',', '.'));
+                if(isNaN(targetNum)) return;
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const easeOutQuad = progress * (2 - progress);
+                    const currentVal = targetNum * easeOutQuad;
+                    el.textContent = Number(currentVal).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    if (progress < 1) window.requestAnimationFrame(step);
+                    else el.textContent = targetStr;
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            function animateInt(el, target, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const easeOutQuad = progress * (2 - progress);
+                    const currentVal = Math.floor(target * easeOutQuad);
+                    el.textContent = currentVal;
+                    if (progress < 1) window.requestAnimationFrame(step);
+                    else el.textContent = target;
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            const countObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.counted) {
+                        entry.target.dataset.counted = '1';
+                        if (entry.target.classList.contains('price-value')) {
+                            const activeBtn = document.querySelector('.toggle-btn.active');
+                            const period = activeBtn ? activeBtn.dataset.period : 'mensal';
+                            const targetStr = entry.target.dataset[period] || entry.target.textContent;
+                            entry.target.textContent = '0,00';
+                            window.animatePrice(entry.target, targetStr, 1200);
+                        } else if (entry.target.classList.contains('count-up-int')) {
+                            const targetStr = entry.target.dataset.target;
+                            entry.target.textContent = '0';
+                            animateInt(entry.target, parseInt(targetStr, 10), 1500);
+                        }
+                        countObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.price-value, .count-up-int').forEach(el => countObserver.observe(el));
+
         });
     </script>
     
@@ -1154,12 +1212,17 @@
             0% { transform: scale(1); opacity: 0.8; }
             100% { transform: scale(1.6); opacity: 0; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             #wpp-fix {
-                bottom: 24px !important;
-                right: 24px !important;
+                right: 20px !important;
+                left: auto !important;
+                bottom: 80px !important;
+                transform: none !important;
                 width: 56px !important;
                 height: 56px !important;
+            }
+            #wpp-fix:hover {
+                transform: scale(1.05) !important;
             }
         }
     </style>
