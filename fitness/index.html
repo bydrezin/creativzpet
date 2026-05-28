@@ -22,9 +22,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Font: async (non-blocking) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap"></noscript>
+    <!-- Google Font: synchronous -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wdth,wght,ROND@8..144,-10..0,25..150,300..600,0..100&display=swap">
 
     <!-- Critical CSS inline (above-the-fold) -->
     <style>
@@ -58,13 +57,20 @@
         .progress-card { position: absolute; right: 0; top: 0; bottom: 195px; width: 290px; display: flex; flex-direction: column; justify-content: space-between; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 24px; z-index: 20; border: 1px solid rgba(0, 0, 0, 0.08); }
         .results-container { max-width: 1200px; width: calc(100% - 48px); position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); z-index: 5; padding: 24px 40px; background-color: var(--dark-card); border-radius: 12px; display: grid; grid-template-columns: 1fr 2.2fr; align-items: center; gap: 40px; }
         .testimonials-carousel-wrapper { min-height: 480px; width: 100%; display: block; position: relative; }
-        .anim-char { opacity: 0; visibility: hidden; }
-        .anim-char[data-animated="1"] { opacity: 1; visibility: visible; }
     </style>
 
-    <!-- Main stylesheet: async load -->
-    <link rel="preload" href="https://demonstracao.creativzlab.com/fitness/style.css?v=2026.05.28.v1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://demonstracao.creativzlab.com/fitness/style.css?v=2026.05.28.v1"></noscript>
+    <!-- Main stylesheet: synchronous -->
+    <link rel="stylesheet" href="https://demonstracao.creativzlab.com/fitness/style.css?v=2026.05.28.v1">
+    
+    <!-- Anti-Flicker (FOUC) Script & Style -->
+    <style>
+        body { opacity: 0; transition: opacity 0.2s ease-in-out; }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.opacity = "1";
+        });
+    </script>
 </head>
 <body>
 
@@ -151,10 +157,10 @@
                     
                     <div class="hero-social-proof">
                         <div class="avatar-stack">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 1" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
-                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 2" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 3" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 4" class="avatar-img" width="38" height="38" loading="lazy" decoding="async" fetchpriority="low">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 1" class="avatar-img" width="38" height="38" decoding="async" fetchpriority="high">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 2" class="avatar-img" width="38" height="38" decoding="async" fetchpriority="high">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 3" class="avatar-img" width="38" height="38" decoding="async" fetchpriority="high">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Membro 4" class="avatar-img" width="38" height="38" decoding="async" fetchpriority="high">
                         </div>
                         <p class="social-proof-text">
                             Junte-se a <strong>+100 alunos</strong><br>
